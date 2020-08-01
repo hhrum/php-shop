@@ -15,11 +15,15 @@
     </div>
 
     <div class="categories__main">
+        {foreach from=$categories item=category }
+
         <div class="category">
             <div class="category__icon">
-                <i class="fa fa-desktop fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-{$category->getIcon()} fa-2x" aria-hidden="true"></i>
             </div>
-            <div class="category__title">ПК</div>
+            <div class="category__title">{$category->getName()}</div>
         </div>
+
+        {/foreach} 
     </div>
 </div>
