@@ -19,10 +19,24 @@
                 </div>
             </div>
             <div class="col-8 col-m-6 col-lg-2 order-3 order-lg-2">
-                <div class="header__categories">
+                <div class="d-none d-md-block header__categories dropdown">
                     <i class="header__icon fa fa-bars" aria-hidden="true"></i>
-                    Категории
+                    <a href="#" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Категории
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">
+                            <i class="fa fa-desktop header__icon" aria-hidden="true"></i> ПК
+                        </a>
+                    </div>
                 </div>
+                <div class="d-block d-md-none header__categories dropdown">
+                    <i class="header__icon fa fa-bars" aria-hidden="true"></i>
+                    <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Категории
+                    </a>
+                </div>
+
             </div>
             <div class="col-12 col-md-6 col-lg-4 order-2 order-lg-3">
                 <div class="header__search">
@@ -37,8 +51,16 @@
                 <div class="header__help">Помощь</div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="collapse header__categories-collapse" id="collapseExample">
+                    <a class="dropdown-item header__categories-collapse-item" href="#">
+                        <i class="fa fa-desktop header__icon" aria-hidden="true"></i> ПК
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-
     <main class="container">
         <div class="hot-news">
             <div class="hot-new__title">Title</div>
