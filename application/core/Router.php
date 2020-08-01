@@ -2,7 +2,7 @@
 
 namespace application\core;
 
-use application\core\View;
+use application\core\SmartyTemplate;
 
 /*
 
@@ -43,9 +43,15 @@ class Router {
 
     static function ErrorPage($code) {
         http_response_code($code);
-        View::errorCode($code);
+        $smarty = new SmartyTemplate;
+        $smarty->errorCode(404);
 
         exit();
+    }
+
+    static function redirect($url) {
+		header('location: '.$url);
+		exit;
     }
 
 }

@@ -8,7 +8,7 @@ class SmartyTemplate extends \Smarty {
     protected $config;
     public $layout = "default";
 
-    public function __construct($route) {
+    public function __construct($route = []) {
         $this->route = $route;
         $this->config = require "application/config/smarty.php";
 
@@ -33,13 +33,13 @@ class SmartyTemplate extends \Smarty {
         }
     }
 
-    public static function errorCode($code) {
-        $file = "$code.tpl";
-        $path = $this->config['template'] . '/errors/' . $file;
-
+    public function errorCode($code) {
+        $file = "errors/$code.tpl";
+        $path = $this->config['template'] . '/' . $file;
+        
         if(file_exists($path)) {
             $this->display($file);
-        }
+        } 
     }
 
 }

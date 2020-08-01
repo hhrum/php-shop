@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="public/font-awesome/css/font-awesome.min.css">
-    <title><title> {$title} </title></title>
+    <title>{$title}</title>
 </head>
 <body>
     
