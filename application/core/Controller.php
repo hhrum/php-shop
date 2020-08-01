@@ -2,7 +2,7 @@
 
 namespace application\core;
 
-use application\core\View;
+use application\core\SmartyTemplate;
 
 /*
 
@@ -18,7 +18,7 @@ abstract class Controller {
     public function __construct($route) {
 
         $this->route = $route;
-        $this->view = new View($route);
+        $this->view = new SmartyTemplate($route);
         $this->model = $this->loadModel($route['controller']);
 
     }

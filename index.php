@@ -2,6 +2,7 @@
 
 require 'application/lib/Dev.php';
 require 'application/lib/rb.php';
+require 'application/lib/Smarty/Smarty.class.php';
 
 use application\core\Router;
 

@@ -9,6 +9,7 @@
     --bg-element: #eee; 
 }
 
+/* Header Block */
 .header {
     padding: 20px 0 60px;
     font-weight: bolder;
@@ -81,12 +82,14 @@
     justify-content: flex-end;
 }
 
+/* Main Block */
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Main Block -> Hot News Block */
 .hot-news {
     width: 100%;
     height: 350px;
@@ -130,6 +133,7 @@ main {
     opacity: 1;
 }
 
+/* Main Block -> Categories Block */
 .categories {
     width: 100%;
     margin: 20px 0;
@@ -191,42 +195,47 @@ main {
     font-weight: bold;
 }
 
+
+/* Размер экрана больше 768 */
 @media (min-width: 768px) {     
 
-.header__search {
-    width: 100%;
-    margin-bottom: 10px;
-    text-align: center;
+    /* Header Block */
+    .header__search {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
 
-    justify-content: flex-end;
+        justify-content: flex-end;
+    }
+
+    .header__search-icon {
+        left: calc(100% - 300px + 15px);
+    }
+
+    .header__search input {
+        width: 300px;
+    }
+
+    .header__logo {
+        justify-content: start;
+    }
+
 }
 
-.header__search-icon {
-    left: calc(100% - 300px + 15px);
-}
-
-.header__search input {
-    width: 300px;
-}
-
-.header__logo {
-    justify-content: start;
-}
-
-}
-
+/* Размер экрана больше 992 */
 @media (min-width: 992px)  {
 
-.header {
-    padding: 80px 0;
-}
+    /* Header Block */
+    .header {
+        padding: 80px 0;
+    }
 
-.header__search {
-    justify-content: center;
-}
+    .header__search {
+        justify-content: center;
+    }
 
-.header__search-icon {
-    left: calc(50% - 150px + 15px);
-}
+    .header__search-icon {
+        left: calc(50% - 150px + 15px);
+    }
 
 }
