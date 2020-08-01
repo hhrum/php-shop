@@ -56,12 +56,20 @@
     border: 3px solid var(--accent-color);
 }
 
-.header__logo {
-    margin-bottom: 10px;
-    width: 100%;
+.header__logo,
+.header__categories {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.header__logo {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.header__logo p {
+    margin: 0;
 }
 
 .header__icon {
