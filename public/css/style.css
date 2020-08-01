@@ -183,6 +183,7 @@ main {
 
     color: var(--text-color);
     font-size: 10pt;
+    text-decoration: none;
 
     display: flex;
     flex-direction: column;

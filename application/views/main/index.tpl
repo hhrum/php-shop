@@ -15,14 +15,18 @@
     </div>
 
     <div class="categories__main">
-        {foreach from=$categories item=category }
+        {foreach from=$categories item=category name=categories}
 
-        <div class="category">
+        {if $smarty.foreach.categories.index == 8}
+            {break}
+        {/if}
+
+        <a href="#" class="category">
             <div class="category__icon">
                 <i class="fa fa-{$category->getIcon()} fa-2x" aria-hidden="true"></i>
             </div>
             <div class="category__title">{$category->getName()}</div>
-        </div>
+        </a>
 
         {/foreach} 
     </div>
