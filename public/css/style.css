@@ -116,6 +116,10 @@
     margin: 10px 0;
 }
 
+.header__categories-collapse-seperator {
+    margin: 10px 20px;
+}
+
 .header__contacts,
 .header__help {
     width: 100%;
