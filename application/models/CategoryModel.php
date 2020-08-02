@@ -44,7 +44,14 @@ class CategoryModel extends Model {
         return $this->db->insert($this->base_name, $data);
     }
 
-    public function getCategories() {
+    public function getCategory($id) {
+        $category = $this->db->findOne($this->base_name, $id);
+
+        if ($category) return new Category($category['id'], $category['name'], $category['icon']);
+        else return false;
+    }
+
+    public function getAlCategories() {
         $cats = $this->db->select($this->base_name);
 
         $categories = [];

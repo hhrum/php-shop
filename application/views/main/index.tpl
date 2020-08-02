@@ -21,7 +21,7 @@
             {break}
         {/if}
 
-        <a href="#" class="category">
+        <a href="{$url}/main/category/?category_id={$category->getId()}" class="category">
             <div class="category__icon">
                 <i class="fa fa-{$category->getIcon()} fa-2x" aria-hidden="true"></i>
             </div>

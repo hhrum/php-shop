@@ -9,6 +9,7 @@ class SmartyTemplate extends \Smarty {
     public $layout = "default";
 
     public function __construct($route = []) {
+        global $main_config;
         $this->route = $route;
         $this->config = require "application/config/smarty.php";
 
@@ -17,6 +18,8 @@ class SmartyTemplate extends \Smarty {
         $this->setCompileDir($this->config['template_c']);
         $this->setConfigDir($this->config['config']);
         $this->setCacheDir($this->config['cache']);
+
+        $this->assign('url', $main_config['url']);
     }
 
     public function render($title) {

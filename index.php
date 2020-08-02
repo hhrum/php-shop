@@ -4,6 +4,8 @@ require 'application/lib/Dev.php';
 require 'application/lib/rb.php';
 require 'application/lib/Smarty/Smarty.class.php';
 
+$main_config = require 'application/config/main.php';
+
 use application\core\Router;
 
 spl_autoload_register(function($class) {

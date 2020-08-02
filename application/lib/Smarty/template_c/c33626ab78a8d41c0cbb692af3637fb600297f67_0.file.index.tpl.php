@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-01 09:30:19
+/* Smarty version 3.1.34-dev-7, created on 2020-08-02 21:58:55
   from 'F:\IT\xampp\htdocs\php-shop\application\views\main\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f251a0b2ac0b1_37600707',
+  'unifunc' => 'content_5f271affcc3510_61845408',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c33626ab78a8d41c0cbb692af3637fb600297f67' => 
     array (
       0 => 'F:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\main\\index.tpl',
-      1 => 1596267018,
+      1 => 1596398333,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f251a0b2ac0b1_37600707 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f271affcc3510_61845408 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="hot-news">
     <div class="hot-new__title">Title</div>
     <div class="hot-news__description">Description of news</div>
@@ -52,7 +52,9 @@ $_smarty_tpl->tpl_vars['__smarty_foreach_categories']->value['index']++;
             <?php break 1;?>
         <?php }?>
 
-        <a href="#" class="category">
+        <a href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
+/main/category/?category_id=<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+" class="category">
             <div class="category__icon">
                 <i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['category']->value->getIcon();?>
  fa-2x" aria-hidden="true"></i>
