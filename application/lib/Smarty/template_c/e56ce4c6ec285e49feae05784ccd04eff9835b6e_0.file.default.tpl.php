@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-02 21:58:45
+/* Smarty version 3.1.34-dev-7, created on 2020-08-03 03:30:43
   from 'F:\IT\xampp\htdocs\php-shop\application\views\layouts\default.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f271af5051450_21243905',
+  'unifunc' => 'content_5f2768c3f13f97_39303596',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e56ce4c6ec285e49feae05784ccd04eff9835b6e' => 
     array (
       0 => 'F:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\layouts\\default.tpl',
-      1 => 1596398323,
+      1 => 1596418243,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f271af5051450_21243905 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2768c3f13f97_39303596 (Smarty_Internal_Template $_smarty_tpl) {
 ?></html><!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -61,10 +61,10 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
 ?>
 
                         <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
-/main/category/?category_id=<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+/main/category/?category_id=<?php echo $_smarty_tpl->tpl_vars['category']->value['id'];?>
 ">
-                            <i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['category']->value->getIcon();?>
- header__icon" aria-hidden="true"></i> <?php echo $_smarty_tpl->tpl_vars['category']->value->getName();?>
+                            <i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['category']->value['icon'];?>
+ header__icon" aria-hidden="true"></i> <?php echo $_smarty_tpl->tpl_vars['category']->value['name'];?>
 
                         </a>
 
@@ -107,10 +107,10 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
 ?>
 
                     <a class="dropdown-item header__categories-collapse-item" href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
-/main/category/?category_id=<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+/main/category/?category_id=<?php echo $_smarty_tpl->tpl_vars['category']->value['id'];?>
 ">
-                        <i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['category']->value->getIcon();?>
- header__icon" aria-hidden="true"></i> <?php echo $_smarty_tpl->tpl_vars['category']->value->getName();?>
+                        <i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['category']->value['icon'];?>
+ header__icon" aria-hidden="true"></i> <?php echo $_smarty_tpl->tpl_vars['category']->value['name'];?>
 
                     </a>
 
@@ -130,10 +130,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </div>
 
-    <main class="container">
-        <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['tpl_name']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+    <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['tpl_name']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
-    </main>
 
     <footer class="container">
         Footer

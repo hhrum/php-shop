@@ -27,8 +27,8 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         {foreach from=$categories item=category name=categories}
 
-                        <a class="dropdown-item" href="{$url}/main/category/?category_id={$category->getId()}">
-                            <i class="fa fa-{$category->getIcon()} header__icon" aria-hidden="true"></i> {$category->getName()}
+                        <a class="dropdown-item" href="{$url}/main/category/?category_id={$category.id}">
+                            <i class="fa fa-{$category.icon} header__icon" aria-hidden="true"></i> {$category.name}
                         </a>
 
                         {/foreach}
@@ -61,8 +61,8 @@
 
                     {foreach from=$categories item=category name=categories}
 
-                    <a class="dropdown-item header__categories-collapse-item" href="{$url}/main/category/?category_id={$category->getId()}">
-                        <i class="fa fa-{$category->getIcon()} header__icon" aria-hidden="true"></i> {$category->getName()}
+                    <a class="dropdown-item header__categories-collapse-item" href="{$url}/main/category/?category_id={$category.id}">
+                        <i class="fa fa-{$category.icon} header__icon" aria-hidden="true"></i> {$category.name}
                     </a>
 
                     {/foreach}
@@ -79,9 +79,7 @@
         </div>
     </div>
 
-    <main class="container">
-        {include file="$tpl_name"}
-    </main>
+    {include file="$tpl_name"}
 
     <footer class="container">
         Footer

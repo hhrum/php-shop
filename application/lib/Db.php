@@ -2,8 +2,6 @@
 
 namespace application\lib;
 
-use application\config\database as database;
-
 class Db {
 
     /* --------------- Singleton Realization --------------- */
@@ -66,7 +64,7 @@ class Db {
 
         return \R::store($row);
     }
-
+    
     public function update($table, $id, $rows) {
         $post = \R::load($table, $id);
 
