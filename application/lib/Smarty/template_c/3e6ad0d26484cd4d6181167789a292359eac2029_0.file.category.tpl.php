@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-03 03:53:16
+/* Smarty version 3.1.34-dev-7, created on 2020-08-03 05:30:52
   from 'F:\IT\xampp\htdocs\php-shop\application\views\main\category.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f276e0c76ec08_79762124',
+  'unifunc' => 'content_5f2784ec963289_69820761',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3e6ad0d26484cd4d6181167789a292359eac2029' => 
     array (
       0 => 'F:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\main\\category.tpl',
-      1 => 1596419595,
+      1 => 1596425451,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f276e0c76ec08_79762124 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2784ec963289_69820761 (Smarty_Internal_Template $_smarty_tpl) {
 ?><main class="container category-block">
     <h3 class="category-block__title">
         <i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['category']->value['icon'];?>
@@ -29,7 +29,7 @@ function content_5f276e0c76ec08_79762124 (Smarty_Internal_Template $_smarty_tpl)
 )
     </h3>
     <div class="row">
-        <div class="col-4">
+        <div class="col-12 col-lg-4">
             <div class="category-searcher standart-block">
                 <input type="text" class="category-searcher__input" placeholder="Поиск по категории">
                 <a href="#" class="category-searcher__close">
@@ -43,7 +43,7 @@ function content_5f276e0c76ec08_79762124 (Smarty_Internal_Template $_smarty_tpl)
                 Фильтры
             </div>
         </div>
-        <div class="col-8">
+        <div class="col-12 col-lg-8">
             <?php if (count($_smarty_tpl->tpl_vars['products']->value) != 0) {?>
             <div class="products">
                 
@@ -55,10 +55,10 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
                 <div class="product standart-block">
                     <div class="row">
-                        <div class="col-2 product__image">
+                        <div class="col-12 col-sm-2 product__image">
                             <i class="fa fa-file-image-o fa-3x" aria-hidden="true"></i>
                         </div>
-                        <div class="col-7 justify-content-start">
+                        <div class="col-8 col-sm-7 justify-content-start">
                             <div class="product__info">
                                 <div class="product__name"><?php echo $_smarty_tpl->tpl_vars['product']->value['name'];?>
 </div>
@@ -66,7 +66,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                                 <div class="product__reviews">1 обзор</div>
                             </div>
                         </div>
-                        <div class="col-3 product__buy-section">
+                        <div class="col-4 col-sm-3 product__buy-section">
                             <a href="#" class="product__buy-btn">
                                 <p class="product__price">
                                     <?php echo $_smarty_tpl->tpl_vars['product']->value['price'];?>

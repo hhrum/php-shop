@@ -18,7 +18,7 @@
                     <p>Мой магазинчик</p>
                 </a>
             </div>
-            <div class="col-12 col-m-6 col-lg-2 order-3 order-lg-2">
+            <div class="col-12 col-md-6 col-lg-2 order-3 order-lg-2">
                 <div class="d-none d-md-flex header__categories dropdown">
                     <i class="header__icon fa fa-bars" aria-hidden="true"></i>
                     <a href="#" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

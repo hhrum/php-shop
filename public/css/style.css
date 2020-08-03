@@ -13,8 +13,12 @@
     /* Colors */
     --text-color: #212529;
     --accent-color: #f19066;
-    --accent-color-dark: #f19066;
+    --accent-color-dark: #E18158;
     --bg-element: #eee; 
+}
+
+a:focus {
+    outline: none;
 }
 
 .standart-block {
@@ -367,6 +371,10 @@ main {
 
     position: absolute;
     right: -1px;
+}
+
+.filters {
+    margin-bottom: 10px;
 }
 
 /* Products Block */

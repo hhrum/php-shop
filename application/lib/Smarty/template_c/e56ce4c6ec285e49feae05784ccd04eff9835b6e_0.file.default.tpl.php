@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-03 03:30:43
+/* Smarty version 3.1.34-dev-7, created on 2020-08-03 05:29:03
   from 'F:\IT\xampp\htdocs\php-shop\application\views\layouts\default.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f2768c3f13f97_39303596',
+  'unifunc' => 'content_5f27847f7b08a9_28029256',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e56ce4c6ec285e49feae05784ccd04eff9835b6e' => 
     array (
       0 => 'F:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\layouts\\default.tpl',
-      1 => 1596418243,
+      1 => 1596425342,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f2768c3f13f97_39303596 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f27847f7b08a9_28029256 (Smarty_Internal_Template $_smarty_tpl) {
 ?></html><!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -45,7 +45,7 @@ function content_5f2768c3f13f97_39303596 (Smarty_Internal_Template $_smarty_tpl)
                     <p>Мой магазинчик</p>
                 </a>
             </div>
-            <div class="col-12 col-m-6 col-lg-2 order-3 order-lg-2">
+            <div class="col-12 col-md-6 col-lg-2 order-3 order-lg-2">
                 <div class="d-none d-md-flex header__categories dropdown">
                     <i class="header__icon fa fa-bars" aria-hidden="true"></i>
                     <a href="#" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
