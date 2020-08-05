@@ -69,13 +69,25 @@
         </div>
     </div>
     <main class="container">
-        <div class="hot-news">
-            <div class="hot-new__title">Title</div>
-            <div class="hot-news__description">Description of news</div>
-            <div class="hot-news__nav">
-                <div class="hot-news_nav-item hot-news_nav-item_selected"></div>
-                <div class="hot-news_nav-item"></div>
-                <div class="hot-news_nav-item"></div>
+        <div id="carouselExampleIndicators" class="carousel slide hot-news" data-ride="carousel">
+            <ol class="carousel-indicators hot-news__nav">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="hot-news_nav-item active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1" class="hot-news_nav-item"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2" class="hot-news_nav-item"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active hot-news__content">
+                    <div class="hot-new__title">Первый слайд</div>
+                    <div class="hot-news__description">Description of news</div>
+                </div>
+                <div class="carousel-item hot-news__content">
+                    <div class="hot-new__title">2 слайд</div>
+                    <div class="hot-news__description">Катаемся</div>
+                </div>
+                <div class="carousel-item hot-news__content">
+                    <div class="hot-new__title">Title</div>
+                    <div class="hot-news__description">Хуебондим, ае</div>
+                </div>
             </div>
         </div>
 
