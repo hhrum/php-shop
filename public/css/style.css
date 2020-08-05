@@ -13,18 +13,39 @@
     /* Colors */
     --text-color: #212529;
     --accent-color: #f19066;
-    --accent-color-dark: #E18158;
+    --accent-color-dark: #e2865f;
     --bg-element: #eee; 
 }
 
 a:focus {
     outline: none;
+    text-decoration: underline;
 }
 
 .standart-block {
     background-color: var(--bg-element);
     border-radius: var(--border-radius);
     padding: 20px;
+}
+
+a.standart-btn {
+    padding: 16px;
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius);
+
+    color: #fff;
+}
+
+.standart-btn:hover,
+.standart-btn:focus {
+    background-color: var(--accent-color-dark);
+
+    color: #fff;
+    opacity: 1;
+}
+
+.standart-btn:hover {
+    text-decoration: none;
 }
 
 /* Header Block */
@@ -34,13 +55,15 @@ a:focus {
 }
 
 /* Задаю стандартный цвет для всех ссылок шапки */
-.header a {
+.header-link {
     color: var(--text-color);
 }
 
-.header a:hover {
+.header-link:hover {
     color: var(--text-color);
     text-decoration: none;
+
+    opacity: 0.7;
 }
 
 /* Выравниваю все столбцы через флекс бокс */
@@ -101,6 +124,14 @@ a:focus {
     width: 100%;
 }
 
+a.header__logo:hover {
+    opacity: 1;
+}
+
+a.header__logo:focus {
+    text-decoration: none;
+}
+
 .header__logo p {
     margin: 0;
 }
@@ -136,8 +167,8 @@ a:focus {
     transition: 0.3s;
 }
 
-.header__categories a:hover {
-    opacity: 0.7;
+.header__categories a.dropdown-item:hover {
+    opacity: 1;
 }
 
 /* Стилизация категорий для мобильной версии */
@@ -153,13 +184,42 @@ a:focus {
     margin: 10px 20px;
 }
 
-.header__contacts,
-.header__help {
+.header__order,
+.header__account {
     width: 100%;
     margin-right: 10px;
 
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+}
+
+.header__order i {
+    margin-bottom: 5px;
+    font-size: 16pt;
+
+    position: relative;
+}
+
+.header__order-count {
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color-dark);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    color: #fff;
+    font-size: 8pt;
+    font-weight: bolder;
+
+    position: absolute;
+    top: -8px;
+    right: -8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Index Page */
@@ -220,7 +280,7 @@ main {
     margin-right: 10px !important;
 
     background-color: #aaa;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .hot-news_nav-item_selected {
@@ -468,6 +528,60 @@ main {
 
 .product__buy-btn:hover .product__buy-text {
     display: block;
+}
+
+/* --------- Modals --------- */
+/* Login Modal */
+div.modal-header,
+div.modal-footer {
+    border: none;
+}
+
+div.modal-body {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.modal-footer {
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal__form > input {
+    margin: 4px 0;
+    padding: 4px 8px;
+
+    border: 2px solid var(--bg-element);
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.modal__form > input:focus {
+    border: 2px solid var(--accent-color);
+    outline: none;
+}
+
+a.modal-btn {
+    padding: 8px 20px;
+}
+
+a.login-modal__signup {
+    margin-top: 0;
+
+    color: var(--text-color);
+    font-size: 9pt;
+    font-weight: bolder;
+}
+
+a.login-modal__signup:hover {
+    color: var(--text-color);
 }
 
 /* --------- Оптимизация под различные устройства --------- */

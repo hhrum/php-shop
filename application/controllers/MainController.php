@@ -7,6 +7,9 @@ use application\core\Router;
 use application\models\CategoryModel;
 use application\models\ProductModel;
 
+/**
+ * Контроллер для главной страницы
+ */
 class MainController extends Controller {
 
     public function indexAction() {
@@ -15,7 +18,7 @@ class MainController extends Controller {
         $category_model = $this->loadModel("category");
         
         $categories = $category_model->getAlCategories();
-
+        
         $this->view->assignByRef("categories", $categories);
         $this->view->render("Мой магазинчик");
     }
