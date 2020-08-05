@@ -58,9 +58,13 @@
             </div>
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-5">
                 <div class="header__account">
+                    {if $user}
+                        {$user.name}
+                    {else}
                     <a href="#" class="standart-btn" data-toggle="modal" data-target="#signinModal">
                         Войти
-                    </a>
+                    </a>    
+                    {/if}
                 </div>
             </div>
         </div>
@@ -96,13 +100,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="modal__form">
+                <form class="modal__form" id="signin-form">
                     <input type="text" name="email" placeholder="Введите ваш Email">
                     <input type="password" name="password" placeholder="Введите ваш пароль">
                 </form>
             </div>
             <div class="modal-footer">
-                <a href="#" class="modal-btn standart-btn">Войти</a>
+                <a href="#" class="modal-btn standart-btn" id="signin-btn">Войти</a>
                 <a href="#" class="login-modal__signup" data-dismiss="modal"  data-toggle="modal" data-target="#signupModal">Зарегистрироваться</a>
             </div>
           </div>
@@ -119,7 +123,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="modal__form">
+                <form class="modal__form" id="signup-form">
                     <input type="text" name="name" placeholder="Имя">
                     <input type="text" name="email" placeholder="Введите ваш Email">
                     <input type="password" name="password1" placeholder="Пароль">
@@ -127,15 +131,15 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <a href="#" class="modal-btn standart-btn">Создать аккаунт</a>
+                <a href="#" class="modal-btn standart-btn" id="signup-btn">Создать аккаунт</a>
             </div>
           </div>
         </div>
     </div>
     
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    
+    <script src="{$url}/public/scripts/main.js"></script>
 </body>
 </html>

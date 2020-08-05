@@ -47,7 +47,7 @@ class UserModel extends Model {
     public function signinUser($email, $password) {
         $user = $this->getUserByEmail($email);
 
-        if ($user || !password_verify($password, $user['password'])) return false;
+        if (!isset($user) || !password_verify($password, $user['password'])) return false;
         
         $hash = password_hash(random_bytes(5), PASSWORD_DEFAULT);
 
@@ -66,7 +66,7 @@ class UserModel extends Model {
     public function checkAuth() {
         if (isset($_SESSION['user_hash']) && isset($_SESSION['user_id'])) {
             $user = $this->getUserById($_SESSION['user_id']);
-            return ($user && $user['hash'] == $_SESSION['user_hash']);
+            return ($user && $user['hash'] == $_SESSION['user_hash']) ? $user : false;
         } 
         return false;
     }

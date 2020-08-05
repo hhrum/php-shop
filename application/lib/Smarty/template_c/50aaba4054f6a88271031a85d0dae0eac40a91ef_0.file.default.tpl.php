@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-05 08:53:49
+/* Smarty version 3.1.34-dev-7, created on 2020-08-05 10:07:23
   from 'C:\IT\xampp\htdocs\php-shop\application\views\layouts\default.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f2a577de62785_56047062',
+  'unifunc' => 'content_5f2a68bb91aca0_27601344',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50aaba4054f6a88271031a85d0dae0eac40a91ef' => 
     array (
       0 => 'C:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\layouts\\default.tpl',
-      1 => 1596610428,
+      1 => 1596614842,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f2a577de62785_56047062 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2a68bb91aca0_27601344 (Smarty_Internal_Template $_smarty_tpl) {
 ?></html><!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -97,9 +97,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-5">
                 <div class="header__account">
+                    <?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
+                        <?php echo $_smarty_tpl->tpl_vars['user']->value['name'];?>
+
+                    <?php } else { ?>
                     <a href="#" class="standart-btn" data-toggle="modal" data-target="#signinModal">
                         Войти
-                    </a>
+                    </a>    
+                    <?php }?>
                 </div>
             </div>
         </div>
@@ -148,13 +153,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </button>
             </div>
             <div class="modal-body">
-                <form class="modal__form">
+                <form class="modal__form" id="signin-form">
                     <input type="text" name="email" placeholder="Введите ваш Email">
                     <input type="password" name="password" placeholder="Введите ваш пароль">
                 </form>
             </div>
             <div class="modal-footer">
-                <a href="#" class="modal-btn standart-btn">Войти</a>
+                <a href="#" class="modal-btn standart-btn" id="signin-btn">Войти</a>
                 <a href="#" class="login-modal__signup" data-dismiss="modal"  data-toggle="modal" data-target="#signupModal">Зарегистрироваться</a>
             </div>
           </div>
@@ -171,7 +176,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </button>
             </div>
             <div class="modal-body">
-                <form class="modal__form">
+                <form class="modal__form" id="signup-form">
                     <input type="text" name="name" placeholder="Имя">
                     <input type="text" name="email" placeholder="Введите ваш Email">
                     <input type="password" name="password1" placeholder="Пароль">
@@ -179,14 +184,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </form>
             </div>
             <div class="modal-footer">
-                <a href="#" class="modal-btn standart-btn">Создать аккаунт</a>
+                <a href="#" class="modal-btn standart-btn" id="signup-btn">Создать аккаунт</a>
             </div>
           </div>
         </div>
     </div>
     
     <?php echo '<script'; ?>
- src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"><?php echo '</script'; ?>
+ src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"><?php echo '</script'; ?>
@@ -194,7 +199,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <?php echo '<script'; ?>
  src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"><?php echo '</script'; ?>
 >
-    
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
+/public/scripts/main.js"><?php echo '</script'; ?>
+>
 </body>
 </html><?php }
 }
