@@ -49,9 +49,4 @@ class Router {
         exit();
     }
 
-    static function redirect($url) {
-		header('location: '.$url);
-		exit;
-    }
-
 }

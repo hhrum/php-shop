@@ -100,6 +100,7 @@
                 </button>
             </div>
             <div class="modal-body">
+                <div class="modal__form-error" id="signin-error"></div>
                 <form class="modal__form" id="signin-form">
                     <input type="text" name="email" placeholder="Введите ваш Email">
                     <input type="password" name="password" placeholder="Введите ваш пароль">
@@ -123,6 +124,7 @@
                 </button>
             </div>
             <div class="modal-body">
+                <div class="modal__form-error" id="signup-error"></div>
                 <form class="modal__form" id="signup-form">
                     <input type="text" name="name" placeholder="Имя">
                     <input type="text" name="email" placeholder="Введите ваш Email">

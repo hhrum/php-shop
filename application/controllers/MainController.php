@@ -7,6 +7,7 @@ use application\core\Router;
 use application\models\CategoryModel;
 use application\models\ProductModel;
 use application\models\UserModel;
+use application\lib\Responser;
 
 /**
  * Контроллер для главной страницы
@@ -29,41 +30,10 @@ class MainController extends Controller {
         $this->view->render("Мой магазинчик");
     }
 
-    public function signinAction() {
-        if (!isset($_POST['email']) && !isset($_POST['password'])) Router::ErrorPage(404);
-
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        # Здесь должна быть проверка полученных данных
-
-        /** @var UserModel $user_model */
-        $user_model = $this->loadModel("user");
-        $signin_result = $user_model->signinUser($email, $password);
-
-        echo $signin_result ? "true" : "false";
-    }
-
-    public function signupAction() {
-        if (!isset($_POST['name']) && !isset($_POST['email']) && !isset($_POST['password1']) && !isset($_POST['password2'])) Router::ErrorPage(404);
-        
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $password = $_POST['password1'];
-
-        # Здесь должна быть проверка полученных данных
-
-        /** @var UserModel $user_model */
-        $user_model = $this->loadModel("user");
-        $signup_result = $user_model->signupUser($name, $email, $password);
-
-        echo $signup_result ? "true" : "false";
-    }
-
     public function categoryAction() {
         if(empty($_GET) || !isset($_GET['category_id'])) {
             global $main_config;
-            Router::redirect($main_config['url']);
+            Responser::redirectResponse($main_config['url']);
         }
         $category_id = $_GET['category_id'];
 

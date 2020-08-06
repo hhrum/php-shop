@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-05 10:07:23
+/* Smarty version 3.1.34-dev-7, created on 2020-08-06 15:40:01
   from 'C:\IT\xampp\htdocs\php-shop\application\views\layouts\default.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f2a68bb91aca0_27601344',
+  'unifunc' => 'content_5f2c0831c2a4c5_35161153',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50aaba4054f6a88271031a85d0dae0eac40a91ef' => 
     array (
       0 => 'C:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\layouts\\default.tpl',
-      1 => 1596614842,
+      1 => 1596721196,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f2a68bb91aca0_27601344 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2c0831c2a4c5_35161153 (Smarty_Internal_Template $_smarty_tpl) {
 ?></html><!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -153,6 +153,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </button>
             </div>
             <div class="modal-body">
+                <div class="modal__form-error" id="signin-error"></div>
                 <form class="modal__form" id="signin-form">
                     <input type="text" name="email" placeholder="Введите ваш Email">
                     <input type="password" name="password" placeholder="Введите ваш пароль">
@@ -176,6 +177,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </button>
             </div>
             <div class="modal-body">
+                <div class="modal__form-error" id="signup-error"></div>
                 <form class="modal__form" id="signup-form">
                     <input type="text" name="name" placeholder="Имя">
                     <input type="text" name="email" placeholder="Введите ваш Email">

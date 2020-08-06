@@ -60,6 +60,11 @@ class UserModel extends Model {
         return true;
     }
 
+    public function signoutUser() {
+        unset($_SESSION['user_id']);
+        unset($_SESSION['user_hash']);
+    }
+
     /**
      * Метод проверки авторизованности пользователя
      */

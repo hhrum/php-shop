@@ -1,10 +1,8 @@
 <?php
 
-namespace application\models;
+namespace application\lib;
 
-use application\core\Model;
-
-class VerifyModel extends Model {
+class Verify {
 
     /** 
      * Метод, проверяющий поля на валидность
