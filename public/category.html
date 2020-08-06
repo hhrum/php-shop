@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <title>ПК</title>
+</head>
+<body>
+    
+    <div class="header container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4 col-lg-2 order-1">
+                <a href="index.html" class="header__logo">
+                    <i class="header__icon fa fa-slack fa-2x" aria-hidden="true"></i>
+                    <p>Мой магазинчик</p>
+                </a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2 order-3 order-lg-2">
+                <div class="d-none d-md-flex header__categories dropdown">
+                    <i class="header__icon fa fa-bars" aria-hidden="true"></i>
+                    <a href="#" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Категории
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">
+                            <i class="fa fa-desktop header__icon" aria-hidden="true"></i> ПК
+                        </a>
+                    </div>
+                </div>
+                <div class="d-flex d-md-none header__categories dropdown">
+                    <i class="header__icon fa fa-bars" aria-hidden="true"></i>
+                    <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Категории
+                    </a>
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 order-2 order-lg-3">
+                <div class="header__search">
+                    <i class="header__search-icon fa fa-search" aria-hidden="true"></i>
+                    <input type="text" placeholder="Я ищу...">
+                </div>
+            </div>
+            <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-4">
+                <div class="header__contacts">Контакты</div>
+            </div>
+            <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-5">
+                <div class="header__help">Помощь</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="d-block d-md-none col-12">
+                <div class="collapse header__categories-collapse" id="collapseExample">
+                    <a class="dropdown-item header__categories-collapse-item" href="#">
+                        <i class="fa fa-desktop header__icon" aria-hidden="true"></i> ПК
+                    </a>
+                    <hr class="header__categories-collapse-seperator">
+                    <a class="dropdown-item header__categories-collapse-item" href="#">
+                        Контакты
+                    </a>
+                    <a class="dropdown-item header__categories-collapse-item" href="#">
+                        Помощь
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="container category-block">
+        <h3 class="category-block__title">
+            <i class="fa fa-desktop" aria-hidden="true"></i>ПК (2)
+        </h3>
+        <div class="row">
+            <div class="col-12 col-lg-4">
+                <div class="category-searcher standart-block">
+                    <input type="text" class="category-searcher__input" placeholder="Поиск по категории">
+                    <a href="#" class="category-searcher__close">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="category-searcher__search-btn">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="filters standart-block">
+                    Фильтры
+                </div>
+            </div>
+            <div class="col-12 col-lg-8">
+                <div class="products">
+
+                    <div class="product standart-block">
+                        <div class="row">
+                            <div class="col-12 col-sm-2 product__image">
+                                <i class="fa fa-file-image-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-8 col-sm-7 justify-content-start">
+                                <div class="product__info">
+                                    <div class="product__name">Acer Nitro 5</div>
+                                    <div class="product__rating">4.6</div>
+                                    <div class="product__reviews">1 обзор</div>
+                                </div>
+                            </div>
+                            <div class="col-4 col-sm-3 product__buy-section">
+                                <a href="#" class="product__buy-btn">
+                                    <p class="product__price">
+                                        49 999р
+                                    </p>
+                                    <p class="product__buy-text">
+                                        Купить
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product standart-block">
+                        <div class="row">
+                            <div class="col-12 col-sm-2 product__image">
+                                <i class="fa fa-file-image-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-8 col-sm-7 justify-content-start">
+                                <div class="product__info">
+                                    <div class="product__name">Acer Nitro 5</div>
+                                    <div class="product__rating">4.6</div>
+                                    <div class="product__reviews">1 обзор</div>
+                                </div>
+                            </div>
+                            <div class="col-4 col-sm-3 product__buy-section">
+                                <a href="#" class="product__buy-btn">
+                                    <p class="product__price">
+                                        49 999р
+                                    </p>
+                                    <p class="product__buy-text">
+                                        Купить
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container">
+        Footer
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-03 05:29:03
-  from 'F:\IT\xampp\htdocs\php-shop\application\views\layouts\default.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-08-06 15:40:01
+  from 'C:\IT\xampp\htdocs\php-shop\application\views\layouts\default.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f27847f7b08a9_28029256',
+  'unifunc' => 'content_5f2c0831c2a4c5_35161153',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'e56ce4c6ec285e49feae05784ccd04eff9835b6e' => 
+    '50aaba4054f6a88271031a85d0dae0eac40a91ef' => 
     array (
-      0 => 'F:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\layouts\\default.tpl',
-      1 => 1596425342,
+      0 => 'C:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\layouts\\default.tpl',
+      1 => 1596721196,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f27847f7b08a9_28029256 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2c0831c2a4c5_35161153 (Smarty_Internal_Template $_smarty_tpl) {
 ?></html><!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -40,7 +40,7 @@ function content_5f27847f7b08a9_28029256 (Smarty_Internal_Template $_smarty_tpl)
         <div class="row justify-content-center">
             <div class="col-12 col-md-4 col-lg-2 order-1">
                 <a href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
-" class="header__logo">
+" class="header__logo header-link">
                     <i class="header__icon fa fa-slack fa-2x" aria-hidden="true"></i>
                     <p>Мой магазинчик</p>
                 </a>
@@ -48,7 +48,7 @@ function content_5f27847f7b08a9_28029256 (Smarty_Internal_Template $_smarty_tpl)
             <div class="col-12 col-md-6 col-lg-2 order-3 order-lg-2">
                 <div class="d-none d-md-flex header__categories dropdown">
                     <i class="header__icon fa fa-bars" aria-hidden="true"></i>
-                    <a href="#" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a href="#" class="dropdown-toggle header-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Категории
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -60,7 +60,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->valu
 $_smarty_tpl->tpl_vars['category']->do_else = false;
 ?>
 
-                        <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
+                        <a class="dropdown-item header-link" href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
 /main/category/?category_id=<?php echo $_smarty_tpl->tpl_vars['category']->value['id'];?>
 ">
                             <i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['category']->value['icon'];?>
@@ -75,7 +75,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
                 <div class="d-block d-md-none header__categories dropdown">
                     <i class="header__icon fa fa-bars" aria-hidden="true"></i>
-                    <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <a class="header-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         Категории
                     </a>
                 </div>
@@ -88,10 +88,24 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
             </div>
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-4">
-                <div class="header__contacts">Контакты</div>
+                <div class="header__order">
+                    <i class="header__icon fa fa-shopping-cart" aria-hidden="true">
+                        <span class="header__order-count">2</span>
+                    </i>
+                    <a href="#" class="header-link">Корзина</a>
+                </div>
             </div>
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-5">
-                <div class="header__help">Помощь</div>
+                <div class="header__account">
+                    <?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
+                        <?php echo $_smarty_tpl->tpl_vars['user']->value['name'];?>
+
+                    <?php } else { ?>
+                    <a href="#" class="standart-btn" data-toggle="modal" data-target="#signinModal">
+                        Войти
+                    </a>    
+                    <?php }?>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -117,14 +131,6 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
                     <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                    
-                    <hr class="header__categories-collapse-seperator">
-                    <a class="dropdown-item header__categories-collapse-item" href="#">
-                        Контакты
-                    </a>
-                    <a class="dropdown-item header__categories-collapse-item" href="#">
-                        Помощь
-                    </a>
                 </div>
             </div>
         </div>
@@ -136,8 +142,58 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <footer class="container">
         Footer
     </footer>
+
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Авторизация</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal__form-error" id="signin-error"></div>
+                <form class="modal__form" id="signin-form">
+                    <input type="text" name="email" placeholder="Введите ваш Email">
+                    <input type="password" name="password" placeholder="Введите ваш пароль">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal-btn standart-btn" id="signin-btn">Войти</a>
+                <a href="#" class="login-modal__signup" data-dismiss="modal"  data-toggle="modal" data-target="#signupModal">Зарегистрироваться</a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Регистрация</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal__form-error" id="signup-error"></div>
+                <form class="modal__form" id="signup-form">
+                    <input type="text" name="name" placeholder="Имя">
+                    <input type="text" name="email" placeholder="Введите ваш Email">
+                    <input type="password" name="password1" placeholder="Пароль">
+                    <input type="password" name="password2" placeholder="Пароль повторно">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal-btn standart-btn" id="signup-btn">Создать аккаунт</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    
     <?php echo '<script'; ?>
- src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"><?php echo '</script'; ?>
+ src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"><?php echo '</script'; ?>
@@ -145,7 +201,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <?php echo '<script'; ?>
  src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"><?php echo '</script'; ?>
 >
-    
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
+/public/scripts/main.js"><?php echo '</script'; ?>
+>
 </body>
 </html><?php }
 }

@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 function d($str) {
     echo '<pre>';
-    var_dump($str);
+    print_r($str);
     echo '</pre>';
     exit;
 }

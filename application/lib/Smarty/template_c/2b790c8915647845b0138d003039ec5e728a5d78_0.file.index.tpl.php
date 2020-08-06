@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-03 03:53:34
-  from 'F:\IT\xampp\htdocs\php-shop\application\views\main\index.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-08-05 09:14:14
+  from 'C:\IT\xampp\htdocs\php-shop\application\views\main\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f276e1e7ebff6_26334281',
+  'unifunc' => 'content_5f2a5c465f1239_64894863',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'c33626ab78a8d41c0cbb692af3637fb600297f67' => 
+    '2b790c8915647845b0138d003039ec5e728a5d78' => 
     array (
-      0 => 'F:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\main\\index.tpl',
-      1 => 1596418220,
+      0 => 'C:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\main\\index.tpl',
+      1 => 1596611653,
       2 => 'file',
     ),
   ),
@@ -20,17 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f276e1e7ebff6_26334281 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2a5c465f1239_64894863 (Smarty_Internal_Template $_smarty_tpl) {
 ?><main class="container">
-    <div class="hot-news">
-        <div class="hot-new__title">Title</div>
-        <div class="hot-news__description">Description of news</div>
-        <div class="hot-news__nav">
-            <div class="hot-news_nav-item hot-news_nav-item_selected"></div>
-            <div class="hot-news_nav-item"></div>
-            <div class="hot-news_nav-item"></div>
+        <div id="carouselExampleIndicators" class="carousel slide hot-news" data-ride="carousel">
+            <ol class="carousel-indicators hot-news__nav">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="hot-news_nav-item active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1" class="hot-news_nav-item"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2" class="hot-news_nav-item"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active hot-news__content">
+                    <div class="hot-new__title">Первый слайд</div>
+                    <div class="hot-news__description">Description of news</div>
+                </div>
+                <div class="carousel-item hot-news__content">
+                    <div class="hot-new__title">2 слайд</div>
+                    <div class="hot-news__description">Катаемся</div>
+                </div>
+                <div class="carousel-item hot-news__content">
+                    <div class="hot-new__title">Title</div>
+                    <div class="hot-news__description">Хуебондим, ае</div>
+                </div>
+            </div>
         </div>
-    </div>
 
     <div class="categories">
         <div class="categories__header">
