@@ -5,6 +5,7 @@ require 'application/lib/rb.php';
 require 'application/lib/Smarty/Smarty.class.php';
 
 $main_config = require 'application/config/main.php';
+$response_errors = require 'application/config/response_errors.php';
 
 use application\core\Router;
 
