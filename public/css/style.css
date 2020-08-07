@@ -18,6 +18,10 @@
     --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
+body {
+    padding-bottom: 48px;
+}
+
 a:focus {
     outline: none;
     text-decoration: underline;
@@ -54,7 +58,7 @@ a.standart-btn {
     padding: 20px 0;
     font-weight: bolder;
 
-    box-shadow: 0 0 10px var(--shadow-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
     transform: translateZ(-10px);
 }
 
@@ -79,7 +83,6 @@ a.standart-btn {
 /* Стилизую строку поиска и всё, что с ней связанно */
 .header__search {
     width: 100%;
-    margin-bottom: 10px;
     text-align: center;
 
     display: flex;
@@ -157,7 +160,7 @@ a.header__logo:focus {
     background: none;
     border: none;
 
-    margin-left: 10px;
+    margin-top: 8px;
 }
 
 .header__categories:focus {
@@ -283,7 +286,7 @@ a.header__logo:focus {
 /* Index Page */
 /* Main Block */
 main {
-    padding: 40px 0;
+    padding: 15px;
     background-color: var(--bg-element);
 
     display: flex;
@@ -301,7 +304,7 @@ main {
     border-radius: var(--border-radius);
     background-color: var(--bg-element);
 
-    box-shadow: 0 0 10px var(--shadow-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
     position: relative;
 }
 
@@ -354,7 +357,6 @@ main {
 /* Main Block -> Categories Block */
 .categories {
     width: 100%;
-    margin: 20px 0;
     display: flex;
     flex-direction: column;
 }
@@ -383,7 +385,7 @@ main {
     background-color: #fff;
     border-radius: var(--border-radius);
 
-    box-shadow: 0 0 10px var(--shadow-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
 
     display: flex;
     justify-content: center;
@@ -602,6 +604,99 @@ main {
     display: block;
 }
 
+/* Profile Page */
+.profile {
+    padding: 8px;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.profile > div {
+    display: flex;
+}
+
+.profile__header {
+    padding: 20px 0;
+
+    align-items: center;
+    justify-content: space-around;
+}
+
+.profile__avatar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile__avatar i {
+    margin-bottom: 8px;
+}
+
+.profile__body,
+.profile__footer {
+    flex-direction: column;
+}
+
+.profile__body::before,
+.profile__body::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    margin: 8px 0;
+    background-color: var(--bg-element);
+}
+
+.profile__item {
+    margin: 4px 0;
+    
+    color: var(--text-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-color);
+
+    color: #fff;
+}
+
+/* Bottom Nav */
+.bottom-nav {
+    height: 48px;
+    box-shadow: 0 -2px 4px var(--shadow-color);
+    background-color: #fff;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    justify-content: center;
+}
+
+.bottom-nav__container {
+    width: 300px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bottom-nav__item {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.bottom-nav__item:focus {
+    color: var(--accent-color);
+}
+
+.bottom-nav__item--accent {
+    color: var(--accent-color);
+}
+
 /* --------- Modals --------- */
 /* Login Modal */
 div.modal-header,
@@ -664,50 +759,33 @@ a.login-modal__signup:hover {
     color: var(--text-color);
 }
 
-.bottom-nav {
-    height: 48px;
-    box-shadow: 0 0 10px var(--shadow-color);
-    background-color: #fff;
-
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    justify-content: center;
-}
-
-.bottom-nav__container {
-    width: 300px;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.bottom-nav__item {
-    font-size: 24px;
-    color: var(--text-color);
-}
-
-.bottom-nav__item:focus {
-    color: var(--accent-color);
-}
-
-.bottom-nav__item--accent {
-    color: var(--accent-color);
-}
-
 /* --------- Оптимизация под различные устройства --------- */
-/* Размер экрана больше 768 */
-@media (min-width: 768px) {     
 
-    /* Header Block */
+@media (min-width: 576px) {
+
     .header {
         box-shadow: none;
     }
 
+    main {
+        background-color: #fff;
+    }
+
+    .categories__main,
+    .hot-news {
+        box-shadow: none;
+    }
+
+}   
+
+/* Размер экрана больше 768 */
+@media (min-width: 768px) {     
+
+    body {
+        padding-bottom: 0;
+    }
+
+    /* Header Block */
     .header__search {
         width: 100%;
         margin-bottom: 10px;
@@ -726,15 +804,6 @@ a.login-modal__signup:hover {
 
     .header__logo {
         justify-content: start;
-    }
-
-    main {
-        background-color: #fff;
-    }
-
-    .categories__main,
-    .hot-news {
-        box-shadow: none;
     }
 }
 
