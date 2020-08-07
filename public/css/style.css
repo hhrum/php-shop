@@ -15,6 +15,7 @@
     --accent-color: #f19066;
     --accent-color-dark: #e2865f;
     --bg-element: #eee; 
+    --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 a:focus {
@@ -50,8 +51,11 @@ a.standart-btn {
 
 /* Header Block */
 .header {
-    padding: 20px 0 60px;
+    padding: 20px 0;
     font-weight: bolder;
+
+    box-shadow: 0 0 10px var(--shadow-color);
+    transform: translateZ(-10px);
 }
 
 /* Задаю стандартный цвет для всех ссылок шапки */
@@ -222,12 +226,71 @@ a.header__logo:focus {
     justify-content: center;
 }
 
+.header__account-name {
+    position: relative;
+}
+
+.account-menu {
+    background-color: #fff;
+    width: 250px;
+    padding: 20px;
+
+    border-radius: var(--border-radius);
+
+    box-shadow: 0 0 10px var(--shadow-color);
+
+    position: absolute;
+    top: -10px;
+    right: -10px;
+
+    display: none;
+
+    z-index: 1000;
+}
+
+.header__account-name:hover .account-menu,
+.account-menu:hover {
+    display: block;
+}
+
+.account-menu > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-menu__header {
+    margin: 20px 0;
+}
+
+.account-menu__body {
+    margin: 8px 0;
+}
+
+.account-menu__footer::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    margin-bottom: 8px;
+    background-color: var(--bg-element);
+}
+
+.account-menu__item {
+    margin: 4px 0;
+    
+    font-weight: normal;
+}
+
 /* Index Page */
 /* Main Block */
 main {
+    padding: 40px 0;
+    background-color: var(--bg-element);
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    z-index: 0;
 }
 
 /* Main Block -> Hot News Block */
@@ -238,6 +301,7 @@ main {
     border-radius: var(--border-radius);
     background-color: var(--bg-element);
 
+    box-shadow: 0 0 10px var(--shadow-color);
     position: relative;
 }
 
@@ -296,7 +360,9 @@ main {
 }
 
 .categories__header {
-    margin: 30px 0;
+    margin: 20px 0;
+
+    font-weight: bolder;
 
     display: flex;
     justify-content: space-between;
@@ -313,6 +379,12 @@ main {
 }
 
 .categories__main {
+    padding: 20px 0;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+
+    box-shadow: 0 0 10px var(--shadow-color);
+
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -592,11 +664,50 @@ a.login-modal__signup:hover {
     color: var(--text-color);
 }
 
+.bottom-nav {
+    height: 48px;
+    box-shadow: 0 0 10px var(--shadow-color);
+    background-color: #fff;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    justify-content: center;
+}
+
+.bottom-nav__container {
+    width: 300px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bottom-nav__item {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.bottom-nav__item:focus {
+    color: var(--accent-color);
+}
+
+.bottom-nav__item--accent {
+    color: var(--accent-color);
+}
+
 /* --------- Оптимизация под различные устройства --------- */
 /* Размер экрана больше 768 */
 @media (min-width: 768px) {     
 
     /* Header Block */
+    .header {
+        box-shadow: none;
+    }
+
     .header__search {
         width: 100%;
         margin-bottom: 10px;
@@ -617,6 +728,14 @@ a.login-modal__signup:hover {
         justify-content: start;
     }
 
+    main {
+        background-color: #fff;
+    }
+
+    .categories__main,
+    .hot-news {
+        box-shadow: none;
+    }
 }
 
 /* Размер экрана больше 992 */
