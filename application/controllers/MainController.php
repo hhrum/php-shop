@@ -27,6 +27,7 @@ class MainController extends Controller {
         
         $this->view->assignByRef("user", $user);
         $this->view->assignByRef("categories", $categories);
+        $this->view->assign("controller", $this->route['controller']);
         $this->view->render("Мой магазинчик");
     }
 

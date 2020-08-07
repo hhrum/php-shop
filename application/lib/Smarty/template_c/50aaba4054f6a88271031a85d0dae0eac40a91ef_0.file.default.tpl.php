@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-06 15:40:01
+/* Smarty version 3.1.34-dev-7, created on 2020-08-07 13:19:08
   from 'C:\IT\xampp\htdocs\php-shop\application\views\layouts\default.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f2c0831c2a4c5_35161153',
+  'unifunc' => 'content_5f2d38acc8e105_12701679',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50aaba4054f6a88271031a85d0dae0eac40a91ef' => 
     array (
       0 => 'C:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\layouts\\default.tpl',
-      1 => 1596721196,
+      1 => 1596799145,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f2c0831c2a4c5_35161153 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2d38acc8e105_12701679 (Smarty_Internal_Template $_smarty_tpl) {
 ?></html><!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -51,6 +51,7 @@ function content_5f2c0831c2a4c5_35161153 (Smarty_Internal_Template $_smarty_tpl)
                     <a href="#" class="dropdown-toggle header-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Категории
                     </a>
+                    <?php if ($_smarty_tpl->tpl_vars['categories']->value) {?>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'category', false, NULL, 'categories', array (
@@ -72,13 +73,16 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
+                    <?php }?>
                 </div>
+                <?php if ($_smarty_tpl->tpl_vars['categories']->value) {?>
                 <div class="d-block d-md-none header__categories dropdown">
                     <i class="header__icon fa fa-bars" aria-hidden="true"></i>
                     <a class="header-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         Категории
                     </a>
                 </div>
+                <?php }?>
 
             </div>
             <div class="col-12 col-md-6 col-lg-4 order-2 order-lg-3">
@@ -98,8 +102,25 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-5">
                 <div class="header__account">
                     <?php if ($_smarty_tpl->tpl_vars['user']->value) {?>
+                    <div class="header__account-name">
                         <?php echo $_smarty_tpl->tpl_vars['user']->value['name'];?>
 
+                        <div class="account-menu">
+                            <div class="account-menu__header">
+                                <?php echo $_smarty_tpl->tpl_vars['user']->value['email'];?>
+
+                            </div>
+                            <div class="account-menu__body">
+                                <a href="#" class="account-menu__item header-link">Заказы</a>
+                                <a href="#" class="account-menu__item header-link">Контакты</a>
+                                <a href="#" class="account-menu__item header-link">Помощь</a>
+                            </div>
+                            <div class="account-menu__footer">
+                                <a href="#" class="account-menu__item header-link">Настройки профиля</a>
+                                <a href="#" class="account-menu__item header-link">Выход</a>
+                            </div>
+                        </div>
+                    </div>
                     <?php } else { ?>
                     <a href="#" class="standart-btn" data-toggle="modal" data-target="#signinModal">
                         Войти
@@ -108,6 +129,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
             </div>
         </div>
+        <?php if ($_smarty_tpl->tpl_vars['categories']->value) {?>
         <div class="row">
             <div class="d-block d-md-none col-12">
                 <div class="collapse header__categories-collapse" id="collapseExample">
@@ -134,13 +156,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
             </div>
         </div>
+        <?php }?>
     </div>
 
     <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['tpl_name']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
 
-    <footer class="container">
-        Footer
+    <footer>
+        <div class="container">
+            Footer
+        </div>
     </footer>
 
     <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -189,6 +214,34 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <a href="#" class="modal-btn standart-btn" id="signup-btn">Создать аккаунт</a>
             </div>
           </div>
+        </div>
+    </div>
+
+    <div class="d-flex d-md-none bottom-nav">
+        <div class="bottom-nav__container">
+            <a href="<?php if ($_smarty_tpl->tpl_vars['controller']->value == "main") {?>#<?php } else {
+echo $_smarty_tpl->tpl_vars['url']->value;
+}?>" 
+                class="bottom-nav__item <?php if ($_smarty_tpl->tpl_vars['controller']->value == "main") {?> bottom-nav__item--accent <?php }?>">
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="bottom-nav__item">
+                <i class="fa fa-shopping-cart" aria-hidden="true">
+                    
+                </i>
+            </a>
+
+            
+
+            <a href="<?php if ($_smarty_tpl->tpl_vars['controller']->value == "profile") {?>#<?php } else {
+echo $_smarty_tpl->tpl_vars['url']->value;?>
+/profile/menu<?php }?>" 
+                class="bottom-nav__item <?php if ($_smarty_tpl->tpl_vars['controller']->value == "profile") {?> bottom-nav__item--accent <?php }?>">
+                <i class="fa fa-user" aria-hidden="true">
+                    
+                </i>
+            </a>
+            
         </div>
     </div>
     

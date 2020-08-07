@@ -9,6 +9,17 @@ use application\lib\Verify;
 
 class ProfileController extends Controller {
 
+    public function menuAction() {
+        /** @var UserModel $user_model */
+        $user_model = $this->loadModel("user");
+        $user = $user_model->checkAuth();
+        
+        $this->view->assignByRef("user", $user);
+        $this->view->assign("categories", false);
+        $this->view->assign("controller", $this->route['controller']);
+        $this->view->render("Страница пользователя");
+    }
+
     public function signinAction() {
         global $response_errors;
 

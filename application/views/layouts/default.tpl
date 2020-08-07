@@ -24,6 +24,7 @@
                     <a href="#" class="dropdown-toggle header-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Категории
                     </a>
+                    {if $categories}
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         {foreach from=$categories item=category name=categories}
 
@@ -33,13 +34,16 @@
 
                         {/foreach}
                     </div>
+                    {/if}
                 </div>
+                {if $categories}
                 <div class="d-block d-md-none header__categories dropdown">
                     <i class="header__icon fa fa-bars" aria-hidden="true"></i>
                     <a class="header-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         Категории
                     </a>
                 </div>
+                {/if}
 
             </div>
             <div class="col-12 col-md-6 col-lg-4 order-2 order-lg-3">
@@ -59,7 +63,23 @@
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-5">
                 <div class="header__account">
                     {if $user}
+                    <div class="header__account-name">
                         {$user.name}
+                        <div class="account-menu">
+                            <div class="account-menu__header">
+                                {$user.email}
+                            </div>
+                            <div class="account-menu__body">
+                                <a href="#" class="account-menu__item header-link">Заказы</a>
+                                <a href="#" class="account-menu__item header-link">Контакты</a>
+                                <a href="#" class="account-menu__item header-link">Помощь</a>
+                            </div>
+                            <div class="account-menu__footer">
+                                <a href="#" class="account-menu__item header-link">Настройки профиля</a>
+                                <a href="#" class="account-menu__item header-link">Выход</a>
+                            </div>
+                        </div>
+                    </div>
                     {else}
                     <a href="#" class="standart-btn" data-toggle="modal" data-target="#signinModal">
                         Войти
@@ -68,6 +88,7 @@
                 </div>
             </div>
         </div>
+        {if $categories}
         <div class="row">
             <div class="d-block d-md-none col-12">
                 <div class="collapse header__categories-collapse" id="collapseExample">
@@ -82,12 +103,15 @@
                 </div>
             </div>
         </div>
+        {/if}
     </div>
 
     {include file="$tpl_name"}
 
-    <footer class="container">
-        Footer
+    <footer>
+        <div class="container">
+            Footer
+        </div>
     </footer>
 
     <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -136,6 +160,27 @@
                 <a href="#" class="modal-btn standart-btn" id="signup-btn">Создать аккаунт</a>
             </div>
           </div>
+        </div>
+    </div>
+
+    <div class="d-flex d-md-none bottom-nav">
+        <div class="bottom-nav__container">
+            <a href="{if $controller == "main"}#{else}{$url}{/if}" 
+                class="bottom-nav__item {if $controller == "main"} bottom-nav__item--accent {/if}">
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="bottom-nav__item">
+                <i class="fa fa-shopping-cart" aria-hidden="true">
+                    
+                </i>
+            </a>
+            <a href="{if $controller == "profile"}#{else}{$url}/profile/menu{/if}" 
+                class="bottom-nav__item {if $controller == "profile"} bottom-nav__item--accent {/if}">
+                <i class="fa fa-user" aria-hidden="true">
+                    
+                </i>
+            </a>
+            
         </div>
     </div>
     
