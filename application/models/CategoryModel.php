@@ -26,6 +26,8 @@ class CategoryModel extends Model {
     public function getAlCategories() {
         $categories = $this->db->select($this->base_name);
         
+        $categories = empty($categories) ? false : $categories;
+
         return $categories;
     }
 
