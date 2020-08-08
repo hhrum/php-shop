@@ -55,7 +55,7 @@
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-4">
                 <div class="header__order">
                     <i class="header__icon fa fa-shopping-cart" aria-hidden="true">
-                        <span class="header__order-count">2</span>
+                        {if $order|count != 0}<span class="header__order-count">{$order|count}</span>{/if}
                     </i>
                     <a href="#" class="header-link">Корзина</a>
                 </div>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="account-menu__footer">
                                 <a href="#" class="account-menu__item header-link">Настройки профиля</a>
-                                <a href="#" class="account-menu__item header-link">Выход</a>
+                                <a href="{$url}/profile/signout" class="account-menu__item header-link">Выход</a>
                             </div>
                         </div>
                     </div>

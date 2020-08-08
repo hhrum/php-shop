@@ -28,6 +28,19 @@ $('#signup-btn').click(function(event) {
     })
 })
 
+$('.product__buy-btn').click(function(event) {
+    event.preventDefault();
+    btn = $(this);
+    get_url = $(this).attr('href');
+    
+    $.get(get_url, function(result){
+        result = JSON.parse(result);
+        if (result.status) {
+            btn.remove();
+        }
+    });
+})
+
 function sendPost(url, data, callback) {
     $.ajax({
         url: url,

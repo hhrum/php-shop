@@ -38,4 +38,12 @@ class  ProductModel extends Model {
         return $products;
     }
 
+    public function getProductById($id) {
+        return $this->getProduct($id, "id");
+    }
+
+    public function getProduct($value, $key) {
+        return $this->db->findOne($this->base_name, $value, $key);
+    }
+
 }
