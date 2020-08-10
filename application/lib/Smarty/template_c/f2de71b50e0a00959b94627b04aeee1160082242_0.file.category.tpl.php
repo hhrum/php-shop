@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-07 22:56:00
+/* Smarty version 3.1.34-dev-7, created on 2020-08-09 15:24:26
   from 'C:\IT\xampp\htdocs\php-shop\application\views\main\category.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f2dbfe0856621_79015902',
+  'unifunc' => 'content_5f2ff90aa16402_69592959',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2de71b50e0a00959b94627b04aeee1160082242' => 
     array (
       0 => 'C:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\main\\category.tpl',
-      1 => 1596833758,
+      1 => 1596979466,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f2dbfe0856621_79015902 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2ff90aa16402_69592959 (Smarty_Internal_Template $_smarty_tpl) {
 ?><main class="container category-block">
     <h3 class="category-block__title">
         <i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['category']->value['icon'];?>
@@ -58,7 +58,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                         <div class="col-12 col-sm-2 product__image">
                             <i class="fa fa-file-image-o fa-3x" aria-hidden="true"></i>
                         </div>
-                        <div class="col-8 col-sm-7 justify-content-start">
+                        <div class="col-7 col-sm-7 justify-content-start">
                             <div class="product__info">
                                 <div class="product__name"><?php echo $_smarty_tpl->tpl_vars['product']->value['name'];?>
 </div>
@@ -69,7 +69,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                         <?php if (in_array($_smarty_tpl->tpl_vars['product']->value['id'],$_smarty_tpl->tpl_vars['order']->value)) {?>
                         
                         <?php } else { ?>
-                        <div class="col-4 col-sm-3 product__buy-section">
+                        <div class="col-5 col-sm-3 product__buy-section">
                             <a href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
 /order/add/?product_id=<?php echo $_smarty_tpl->tpl_vars['product']->value['id'];?>
 " class="product__buy-btn">

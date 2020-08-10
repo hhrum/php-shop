@@ -16,6 +16,8 @@
     --accent-color-dark: #e2865f;
     --bg-element: #eee; 
     --shadow-color: rgba(0, 0, 0, 0.3);
+
+    --element-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -58,7 +60,7 @@ a.standart-btn {
     padding: 20px 0;
     font-weight: bolder;
 
-    box-shadow: 0 2px 4px var(--shadow-color);
+    box-shadow: var(--element-shadow);
     transform: translateZ(-10px);
 }
 
@@ -302,7 +304,7 @@ main {
     border-radius: var(--border-radius);
     background-color: var(--bg-element);
 
-    box-shadow: 0 2px 4px var(--shadow-color);
+    box-shadow: var(--element-shadow);
     position: relative;
 }
 
@@ -342,9 +344,9 @@ main {
     width: 15px !important;
     height: 15px !important;
     border-radius: 50% !important;
-    margin-right: 10px !important;
+    margin-right: 8px !important;
 
-    background-color: #aaa;
+    background-color: #aaa !important;
     opacity: 0.7;
 }
 
@@ -383,7 +385,7 @@ main {
     background-color: #fff;
     border-radius: var(--border-radius);
 
-    box-shadow: 0 2px 4px var(--shadow-color);
+    box-shadow: var(--element-shadow);
 
     display: flex;
     justify-content: center;
@@ -436,8 +438,7 @@ main {
 
 /* Category Page */
 .category-block__title {
-    margin-left: 30px;
-    margin-bottom: 30px;
+    margin: 10px;
     font-weight: bolder;
 }
 
@@ -458,6 +459,9 @@ main {
     height: 50px;
     margin-bottom: 10px;
     padding: 0 20px; 
+    background-color: #fff;
+
+    box-shadow: var(--element-shadow);
 
     display: flex;
     align-items: center;
@@ -525,12 +529,18 @@ main {
 /* Products Block */
 .product {
     margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: var(--element-shadow);
 }
 
 .product > .row > * {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.product__info {
+    overflow: hidden;
 }
 
 .product__image i {
@@ -543,6 +553,9 @@ main {
 }
 
 .product__name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     font-size: 1.1rem;
     font-weight: bolder;
 }
@@ -587,6 +600,9 @@ main {
 
 .product__buy-btn p {
     margin-bottom: 0;
+
+    text-align: center;
+
     transition: 0.3s;
 }
 
@@ -608,7 +624,7 @@ main {
     background-color: #fff;
     border-radius: var(--border-radius);
 
-    box-shadow: 0 2px 4px var(--shadow-color);
+    box-shadow: var(--element-shadow);
 }
 
 .profile > div {
@@ -782,6 +798,11 @@ a.login-modal__signup:hover {
 
     body {
         padding-bottom: 0;
+    }
+
+    .category-block__title {
+        margin-bottom: 30px;    
+        margin-left: 60px;
     }
 
     /* Header Block */
