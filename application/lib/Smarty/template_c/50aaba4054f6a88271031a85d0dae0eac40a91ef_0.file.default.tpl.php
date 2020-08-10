@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-07 23:08:24
+/* Smarty version 3.1.34-dev-7, created on 2020-08-10 09:19:20
   from 'C:\IT\xampp\htdocs\php-shop\application\views\layouts\default.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f2dc2c82749a7_14331464',
+  'unifunc' => 'content_5f30f4f8ea26e2_42852972',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50aaba4054f6a88271031a85d0dae0eac40a91ef' => 
     array (
       0 => 'C:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\layouts\\default.tpl',
-      1 => 1596834501,
+      1 => 1597043868,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f2dc2c82749a7_14331464 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f30f4f8ea26e2_42852972 (Smarty_Internal_Template $_smarty_tpl) {
 ?></html><!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -51,8 +51,11 @@ function content_5f2dc2c82749a7_14331464 (Smarty_Internal_Template $_smarty_tpl)
                     <a href="#" class="dropdown-toggle header-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Категории
                     </a>
+
                     <?php if ($_smarty_tpl->tpl_vars['categories']->value) {?>
+                        
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
                         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'category', false, NULL, 'categories', array (
 ));
@@ -72,10 +75,15 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
                         <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
                     </div>
+
                     <?php }?>
+
                 </div>
+
                 <?php if ($_smarty_tpl->tpl_vars['categories']->value) {?>
+
                 <div class="d-block d-md-none header__categories dropdown">
                     <i class="header__icon fa fa-bars" aria-hidden="true"></i>
                     <a class="header-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -97,7 +105,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <?php if (count($_smarty_tpl->tpl_vars['order']->value) != 0) {?><span class="header__order-count"><?php echo count($_smarty_tpl->tpl_vars['order']->value);?>
 </span><?php }?>
                     </i>
-                    <a href="#" class="header-link">Корзина</a>
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
+/order/index" class="header-link">Корзина</a>
+                    
                 </div>
             </div>
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-5">
@@ -227,8 +237,10 @@ echo $_smarty_tpl->tpl_vars['url']->value;
                 class="bottom-nav__item <?php if ($_smarty_tpl->tpl_vars['controller']->value == "main") {?> bottom-nav__item--accent <?php }?>">
                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>
-            <a href="#" class="bottom-nav__item">
-                <i class="fa fa-shopping-cart" aria-hidden="true">
+            <a href="<?php if ($_smarty_tpl->tpl_vars['controller']->value == "order") {?>#<?php } else {
+echo $_smarty_tpl->tpl_vars['url']->value;?>
+/order/index<?php }?>" class="bottom-nav__item">
+                <i class="fa fa-shopping-cart <?php if ($_smarty_tpl->tpl_vars['controller']->value == "order") {?> bottom-nav__item--accent <?php }?>" aria-hidden="true">
                     
                 </i>
             </a>

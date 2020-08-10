@@ -4,22 +4,16 @@ namespace application\controllers;
 
 use application\core\Controller;
 use application\models\UserModel;
+use application\models\OrderModel;
+use application\models\ProductModel;
 use application\lib\Responser;
 use application\lib\Verify;
 
 class ProfileController extends Controller {
 
     public function menuAction() {
-        /** @var UserModel $user_model */
-        $user_model = $this->loadModel("user");
-        $user = $user_model->checkAuth();
-
-        $order = isset($_SESSION['order']) ? $_SESSION['order'] : [];
-        
-        $this->view->assignByRef("user", $user);
-        $this->view->assign("categories", false);
-        $this->view->assignByRef("order", $order);
-        $this->view->assign("controller", $this->route['controller']);
+        $this->initCategories();
+        $this->initOrder();
         $this->view->render("Страница пользователя");
     }
 
@@ -40,9 +34,21 @@ class ProfileController extends Controller {
 
         /** @var UserModel $user_model */
         $user_model = $this->loadModel("user");
-        $signin_result = $user_model->signinUser($resultVerify['email'], $resultVerify['password']);
+        $this->user = $user_model->signinUser($resultVerify['email'], $resultVerify['password']);
 
-        if ($signin_result) Responser::ajaxSuccessResponse();
+        if ($this->user) {
+            /** @var OrderModel $order_model */
+            $order_model = $this->loadModel("order");
+            $products = $order_model->getOrderFromSession();
+
+            /** @var ProductModel $product_model */
+            $product_model = $this->loadModel("product");
+            $products = $product_model->getProductsByListId($products);
+
+            $order_model->fromSessionToUser($this->user, $products);
+
+            Responser::ajaxSuccessResponse();
+        }
         else Responser::ajaxErrorResponse($response_errors['signin_wrong']);
     }
 

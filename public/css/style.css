@@ -14,6 +14,8 @@
     --text-color: #212529;
     --accent-color: #f19066;
     --accent-color-dark: #e2865f;
+    --angry-color: #e74c3c;
+    --angry-color-dark: #c0392b;
     --bg-element: #eee; 
     --shadow-color: rgba(0, 0, 0, 0.3);
 
@@ -21,7 +23,11 @@
 }
 
 body {
+    min-height: 100vh;
     padding-bottom: 48px;
+
+    display: flex;
+    flex-direction: column;
 }
 
 a:focus {
@@ -30,9 +36,11 @@ a:focus {
 }
 
 .standart-block {
-    background-color: var(--bg-element);
+    background-color: #fff;
     border-radius: var(--border-radius);
     padding: 20px;
+
+    box-shadow: var(--element-shadow);
 }
 
 a.standart-btn {
@@ -293,6 +301,7 @@ main {
 
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     align-items: center;
 }
 
@@ -459,9 +468,6 @@ main {
     height: 50px;
     margin-bottom: 10px;
     padding: 0 20px; 
-    background-color: #fff;
-
-    box-shadow: var(--element-shadow);
 
     display: flex;
     align-items: center;
@@ -529,8 +535,6 @@ main {
 /* Products Block */
 .product {
     margin-bottom: 10px;
-    background-color: #fff;
-    box-shadow: var(--element-shadow);
 }
 
 .product > .row > * {
@@ -618,13 +622,35 @@ main {
     display: block;
 }
 
+.product__close-btn {
+    color: var(--angry-color);
+}
+
+.product__close-btn:hover {
+    color: var(--angry-color-dark);
+}
+
+/* Order Page */
+.order-empty {
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.order-empty > * {
+    max-width: 600px;
+    margin: 20px;
+
+    text-align: center;
+}
+
 /* Profile Page */
 .profile {
     padding: 8px;
-    background-color: #fff;
-    border-radius: var(--border-radius);
-
-    box-shadow: var(--element-shadow);
 }
 
 .profile > div {

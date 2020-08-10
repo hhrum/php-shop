@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-09 15:24:26
+/* Smarty version 3.1.34-dev-7, created on 2020-08-10 04:54:44
   from 'C:\IT\xampp\htdocs\php-shop\application\views\main\category.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f2ff90aa16402_69592959',
+  'unifunc' => 'content_5f30b6f4f3b819_97553217',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2de71b50e0a00959b94627b04aeee1160082242' => 
     array (
       0 => 'C:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\main\\category.tpl',
-      1 => 1596979466,
+      1 => 1597028003,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f2ff90aa16402_69592959 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f30b6f4f3b819_97553217 (Smarty_Internal_Template $_smarty_tpl) {
 ?><main class="container category-block">
     <h3 class="category-block__title">
         <i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['category']->value['icon'];?>

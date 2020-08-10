@@ -1,5 +1,5 @@
 <main class="container">
-    <div class="profile">
+    <div class="profile standart-block">
         <div class="profile__header">
             {if $user}
             <div class="profile__avatar">

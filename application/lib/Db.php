@@ -33,6 +33,10 @@ class Db {
         if(!\R::testConnection()) die('No DB connection!');
     }
 
+    public function store($bean) {
+        \R::store($bean);
+    }
+
     // Выборка из таблицы
     public function select($table, $reverse = 0) {
         if ($reverse)

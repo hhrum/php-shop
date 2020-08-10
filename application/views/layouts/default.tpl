@@ -24,8 +24,11 @@
                     <a href="#" class="dropdown-toggle header-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Категории
                     </a>
+
                     {if $categories}
+                        
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
                         {foreach from=$categories item=category name=categories}
 
                         <a class="dropdown-item header-link" href="{$url}/main/category/?category_id={$category.id}">
@@ -33,10 +36,15 @@
                         </a>
 
                         {/foreach}
+
                     </div>
+
                     {/if}
+
                 </div>
+
                 {if $categories}
+
                 <div class="d-block d-md-none header__categories dropdown">
                     <i class="header__icon fa fa-bars" aria-hidden="true"></i>
                     <a class="header-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -57,7 +65,8 @@
                     <i class="header__icon fa fa-shopping-cart" aria-hidden="true">
                         {if $order|count != 0}<span class="header__order-count">{$order|count}</span>{/if}
                     </i>
-                    <a href="#" class="header-link">Корзина</a>
+                    <a href="{$url}/order/index" class="header-link">Корзина</a>
+                    
                 </div>
             </div>
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-5">
@@ -169,8 +178,8 @@
                 class="bottom-nav__item {if $controller == "main"} bottom-nav__item--accent {/if}">
                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>
-            <a href="#" class="bottom-nav__item">
-                <i class="fa fa-shopping-cart" aria-hidden="true">
+            <a href="{if $controller == "order"}#{else}{$url}/order/index{/if}" class="bottom-nav__item">
+                <i class="fa fa-shopping-cart {if $controller == "order"} bottom-nav__item--accent {/if}" aria-hidden="true">
                     
                 </i>
             </a>
