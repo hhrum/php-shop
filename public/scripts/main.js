@@ -32,8 +32,9 @@ $('.product__buy-btn').click(function(event) {
     event.preventDefault();
     btn = $(this);
     get_url = $(this).attr('href');
-    
+
     $.get(get_url, function(result){
+        console.log(result);
         result = JSON.parse(result);
         if (result.status) {
             btn.remove();
@@ -52,6 +53,8 @@ $('.product__close-btn').click(function(event) {
         if (result.status) {
             btn.parent().parent().parent().remove();
             if ($(".products").children().length == 0) location = location;
+        } else {
+            console.error(result.message);
         }
     });
 })

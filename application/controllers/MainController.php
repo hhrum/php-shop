@@ -17,7 +17,7 @@ class MainController extends Controller {
 
     public function indexAction() {
         $this->initCategories();
-        $this->initOrder();
+        $this->initBasket();
         $this->view->render("Мой магазинчик");
     }
 
@@ -41,7 +41,7 @@ class MainController extends Controller {
         $this->view->assignByRef("category", $category);
         $this->view->assignByRef("products", $products);
         $this->initCategories();
-        $this->initOrder();
+        $this->initBasket();
         $this->view->render($category->name);
     }
 

@@ -63,9 +63,9 @@
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-4">
                 <div class="header__order">
                     <i class="header__icon fa fa-shopping-cart" aria-hidden="true">
-                        {if $order|count != 0}<span class="header__order-count">{$order|count}</span>{/if}
+                        {if $basket|count != 0}<span class="header__order-count">{$basket|count}</span>{/if}
                     </i>
-                    <a href="{$url}/order/index" class="header-link">Корзина</a>
+                    <a href="{$url}/basket/index" class="header-link">Корзина</a>
                     
                 </div>
             </div>
@@ -178,8 +178,8 @@
                 class="bottom-nav__item {if $controller == "main"} bottom-nav__item--accent {/if}">
                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>
-            <a href="{if $controller == "order"}#{else}{$url}/order/index{/if}" class="bottom-nav__item">
-                <i class="fa fa-shopping-cart {if $controller == "order"} bottom-nav__item--accent {/if}" aria-hidden="true">
+            <a href="{if $controller == "basket"}#{else}{$url}/basket/index{/if}" class="bottom-nav__item">
+                <i class="fa fa-shopping-cart {if $controller == "basket"} bottom-nav__item--accent {/if}" aria-hidden="true">
                     
                 </i>
             </a>

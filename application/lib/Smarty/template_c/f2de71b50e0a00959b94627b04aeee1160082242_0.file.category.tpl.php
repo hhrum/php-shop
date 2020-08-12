@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-10 04:54:44
+/* Smarty version 3.1.34-dev-7, created on 2020-08-11 05:19:35
   from 'C:\IT\xampp\htdocs\php-shop\application\views\main\category.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f30b6f4f3b819_97553217',
+  'unifunc' => 'content_5f320e47508fd1_67415538',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2de71b50e0a00959b94627b04aeee1160082242' => 
     array (
       0 => 'C:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\main\\category.tpl',
-      1 => 1597028003,
+      1 => 1597115973,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f30b6f4f3b819_97553217 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f320e47508fd1_67415538 (Smarty_Internal_Template $_smarty_tpl) {
 ?><main class="container category-block">
     <h3 class="category-block__title">
         <i class="fa fa-<?php echo $_smarty_tpl->tpl_vars['category']->value['icon'];?>
@@ -66,12 +66,12 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                                 <div class="product__reviews">1 обзор</div>
                             </div>
                         </div>
-                        <?php if (in_array($_smarty_tpl->tpl_vars['product']->value['id'],$_smarty_tpl->tpl_vars['order']->value)) {?>
+                        <?php if (in_array($_smarty_tpl->tpl_vars['product']->value['id'],$_smarty_tpl->tpl_vars['basket']->value)) {?>
                         
                         <?php } else { ?>
                         <div class="col-5 col-sm-3 product__buy-section">
                             <a href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
-/order/add/?product_id=<?php echo $_smarty_tpl->tpl_vars['product']->value['id'];?>
+/basket/add/?product_id=<?php echo $_smarty_tpl->tpl_vars['product']->value['id'];?>
 " class="product__buy-btn">
                                 <p class="product__price">
                                     <?php echo $_smarty_tpl->tpl_vars['product']->value['price'];?>

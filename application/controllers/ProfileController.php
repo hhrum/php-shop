@@ -4,8 +4,6 @@ namespace application\controllers;
 
 use application\core\Controller;
 use application\models\UserModel;
-use application\models\OrderModel;
-use application\models\ProductModel;
 use application\lib\Responser;
 use application\lib\Verify;
 
@@ -13,11 +11,13 @@ class ProfileController extends Controller {
 
     public function menuAction() {
         $this->initCategories();
-        $this->initOrder();
+        $this->initBasket();
         $this->view->render("Страница пользователя");
     }
 
     public function signinAction() {
+
+        // Инициализация полей, проверка на заполненность
         global $response_errors;
 
         if (empty($_POST['email']) || empty($_POST['password'])) 
@@ -26,33 +26,25 @@ class ProfileController extends Controller {
         $email = $_POST['email'];
         $password = $_POST['password'];
 
+        // Проверка полей на корректность ввода
         /** @var Verify $verify */
         $verify = new Verify();
         $resultVerify = $verify->verifySigninInput($email, $password);
 
         if (!$resultVerify['status']) Responser::ajaxErrorResponse($resultVerify['message']);
 
+        // Авторизация пользователя
         /** @var UserModel $user_model */
         $user_model = $this->loadModel("user");
         $this->user = $user_model->signinUser($resultVerify['email'], $resultVerify['password']);
 
-        if ($this->user) {
-            /** @var OrderModel $order_model */
-            $order_model = $this->loadModel("order");
-            $products = $order_model->getOrderFromSession();
-
-            /** @var ProductModel $product_model */
-            $product_model = $this->loadModel("product");
-            $products = $product_model->getProductsByListId($products);
-
-            $order_model->fromSessionToUser($this->user, $products);
-
-            Responser::ajaxSuccessResponse();
-        }
+        if ($this->user) Responser::ajaxSuccessResponse();
         else Responser::ajaxErrorResponse($response_errors['signin_wrong']);
     }
 
     public function signupAction() {
+
+        // Инициализация полей, проверка на заполненность
         global $response_errors;
 
         if (!isset($_POST['name']) && !isset($_POST['email']) && !isset($_POST['password1']) && !isset($_POST['password2'])) 
@@ -60,13 +52,20 @@ class ProfileController extends Controller {
         
         $name = $_POST['name'];
         $email = $_POST['email'];
-        $password = $_POST['password1'];
+        $password1 = $_POST['password1'];
+        $password2 = $_POST['password2'];
 
-        # Здесь должна быть проверка полученных данных
+        // Проверка полей на корректность ввода
+        /** @var Verify $verify */
+        $verify = new Verify();
+        $resultVerify = $verify->verifySignupInput($name, $email, $password1, $password2);
 
+        if (!$resultVerify['status']) Responser::ajaxErrorResponse($resultVerify['message']);
+
+        // Регистрация пользователя
         /** @var UserModel $user_model */
         $user_model = $this->loadModel("user");
-        $signup_result = $user_model->signupUser($name, $email, $password);
+        $signup_result = $user_model->signupUser($resultVerify['name'], $resultVerify['email'], $resultVerify['password']);
 
         echo $signup_result ? "true" : "false";
     }

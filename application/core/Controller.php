@@ -62,10 +62,9 @@ abstract class Controller {
     /**
      * Стандартная инициализация корзины в шаблонизатор
      */
-    protected function initOrder() {
-        $order_model = $this->loadModel("order");
-        $order = $order_model->getOrder($this->user);
-        $this->view->assignByRef("order", $order);
+    protected function initBasket() {
+        $basket = isset($_SESSION['basket']) ? $_SESSION['basket'] : [];
+        $this->view->assignByRef("basket", $basket);
     }
 
 }

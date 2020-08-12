@@ -34,11 +34,11 @@
                                 <div class="product__reviews">1 обзор</div>
                             </div>
                         </div>
-                        {if $product.id|in_array:$order}
+                        {if $product.id|in_array:$basket}
                         
                         {else}
                         <div class="col-5 col-sm-3 product__buy-section">
-                            <a href="{$url}/order/add/?product_id={$product.id}" class="product__buy-btn">
+                            <a href="{$url}/basket/add/?product_id={$product.id}" class="product__buy-btn">
                                 <p class="product__price">
                                     {$product.price}
                                 </p>
