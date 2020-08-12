@@ -11,9 +11,14 @@
                 <div class="order__item">Всего товаров: {$basket|count}</div>
                 <div class="order__item">Общая стоимость: </div>
                 <div class="order__item">Примерное время доставки: </div>
+                <div class="order__buy-btn">
+                    <button class="standart-btn" id="basket-buy">
+                        49 999р
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="col-12 col-md-8 order-lg-2">
+        <div class="col-12 col-md-8 ">
             <div class="products">
                 {foreach from=$basket key=product_key item=product}
                 <div class="product standart-block">
@@ -29,7 +34,7 @@
                             </div>
                         </div>
                         <div class="col-4 col-sm-3 product__buy-section">
-                            <a href="{$url}/basket/remove/?product_key={$product_key}" class="product__close-btn">
+                            <a href="{$url}/basket/remove/?product_key=" data-product-key="{$product_key}" class="product__close-btn">
                                 <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -41,4 +46,8 @@
     {/if}
     </div>
 </main>
+
+<script>
+    var basket = JSON.parse('{$basket|json_encode}');
+</script>
 {*{$order|json_encode}*}

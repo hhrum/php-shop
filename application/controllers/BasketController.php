@@ -11,6 +11,8 @@ class BasketController extends Controller {
     public function indexAction() {
         /** @var BasketModel $basket_model */
         $basket_model = $this->loadModel("basket");
+        $basket_model->initUser($this->user);
+
         $basket = $basket_model->buildBasket();
 
         $this->initCategories();
@@ -26,6 +28,7 @@ class BasketController extends Controller {
 
         /** @var BasketModel $basket */
         $basket = $this->loadModel("basket");
+        $basket->initUser($this->user);
         $response = $basket->addProduct($product_id);
 
         if ($response['status']) Responser::ajaxSuccessResponse();
@@ -40,6 +43,7 @@ class BasketController extends Controller {
 
         /** @var BasketModel $basket */
         $basket = $this->loadModel("basket");
+        $basket->initUser($this->user);
         $basket->removeProduct($product_key);
 
         Responser::ajaxSuccessResponse();

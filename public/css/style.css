@@ -43,9 +43,10 @@ a:focus {
     box-shadow: var(--element-shadow);
 }
 
-a.standart-btn {
+.standart-btn {
     padding: 16px;
     background-color: var(--accent-color);
+    border: none;
     border-radius: var(--border-radius);
 
     color: #fff;
@@ -646,6 +647,14 @@ main {
     margin: 20px;
 
     text-align: center;
+}
+
+.order__buy-btn {
+    width: 100%;
+    margin-top: 16px;
+
+    display: flex;
+    justify-content: center;
 }
 
 /* Profile Page */

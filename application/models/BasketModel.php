@@ -7,12 +7,19 @@ use application\models\ProductModel;
 
 class BasketModel extends Model {
 
+    protected $user = null;
     protected $product_model;
+    protected $base_name = "basket";
 
     public function __construct() {
+        parent::__construct();
         $this->product_model = new ProductModel();
     }
-    
+
+    public function initUser($user) {
+        $this->user = $user;
+    }
+
     /** 
      * Метод возвращающий корзину покупок с чистым массивом
      */
@@ -27,15 +34,38 @@ class BasketModel extends Model {
         return $result;
     }
 
+    public function convertBasketFromSessionToUser() {
+        if (!$this->user) return;
+
+        $session_items = isset($_SESSION['basket']) ? $_SESSION['basket'] : [];
+
+        foreach($session_items as $value) $this->addProduct($value['product_id'], $value['count']);
+
+        unset($_SESSION['basket']);
+    }
+
     /**
      * Метод добавляет новую покупку
      */
-    public function addProduct($product_id) {
+    public function addProduct($product_id, $count = 1) {
         global $response_errors;
         if (!$this->product_model->getProductById($product_id)) return ['status' => false, 'message' => $response_errors['product_not_found']];
-        else if(in_array($product_id, $_SESSION['basket'])) return ['status' => true];
-        
-        $_SESSION['basket'][] = $product_id;
+        if(in_array($product_id, $this->getProductsId())) return ['status' => true];
+
+        if ($this->user) {
+            $basket_item = $this->db->dispense($this->base_name);
+            $basket_item->product_id = $product_id;
+            $basket_item->count = $count;
+
+            $this->user->ownBasketList[] = $basket_item;
+            $this->db->store($this->user);
+        } else {        
+            $basket_item = [
+                'product_id' => $product_id,
+                'count' => $count
+            ];
+            $_SESSION['basket'][] = $basket_item;
+        }
 
         return ['status' => true];
     }
@@ -44,7 +74,13 @@ class BasketModel extends Model {
      * Метод удаляет элемент из списка покупок
      */
     public function removeProduct($product_key) {
-        unset($_SESSION['basket'][$product_key]);
+
+        if ($this->user) {
+            unset($this->user->xownBasketList[$product_key]);
+            $this->db->store($this->user);
+        } else {
+            unset($_SESSION['basket'][$product_key]);
+        }
 
         return true;
     }
@@ -58,8 +94,26 @@ class BasketModel extends Model {
         return $products;
     }
 
-    public function getProductsId() {
-        return $_SESSION['basket'];
+    public function getProductsId() {     
+        $items = $this->getBasketItems();
+        $ids = [];
+
+        foreach ($items as $key => $value) {
+            $ids[$key] = $value['product_id'];
+        }
+
+        return $ids;
+    }
+
+    public function getBasketItems() {
+
+        if ($this->user) {
+            $products = $this->user->ownBasketList;
+            return $products;
+        } else {
+            return isset($_SESSION['basket']) ? $_SESSION['basket'] : [];
+        }   
+
     }
 
 }

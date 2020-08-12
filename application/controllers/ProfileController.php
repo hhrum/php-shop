@@ -4,6 +4,7 @@ namespace application\controllers;
 
 use application\core\Controller;
 use application\models\UserModel;
+use application\models\BasketModel;
 use application\lib\Responser;
 use application\lib\Verify;
 
@@ -37,6 +38,12 @@ class ProfileController extends Controller {
         /** @var UserModel $user_model */
         $user_model = $this->loadModel("user");
         $this->user = $user_model->signinUser($resultVerify['email'], $resultVerify['password']);
+        
+        /** @var BasketModel $basket_model */
+        $basket_model = $this->loadModel("basket");
+        $basket_model->initUser($this->user);
+        $basket_model->convertBasketFromSessionToUser();
+
 
         if ($this->user) Responser::ajaxSuccessResponse();
         else Responser::ajaxErrorResponse($response_errors['signin_wrong']);

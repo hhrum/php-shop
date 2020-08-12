@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-07 12:58:52
+/* Smarty version 3.1.34-dev-7, created on 2020-08-12 15:29:17
   from 'C:\IT\xampp\htdocs\php-shop\application\views\main\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f2d33ecf02367_09694667',
+  'unifunc' => 'content_5f33eead68b867_01016852',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2b790c8915647845b0138d003039ec5e728a5d78' => 
     array (
       0 => 'C:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\main\\index.tpl',
-      1 => 1596797897,
+      1 => 1597238956,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f2d33ecf02367_09694667 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f33eead68b867_01016852 (Smarty_Internal_Template $_smarty_tpl) {
 ?><main class="container">
         <div id="carouselExampleIndicators" class="carousel slide hot-news" data-ride="carousel">
             <ol class="carousel-indicators hot-news__nav">
@@ -47,7 +47,7 @@ function content_5f2d33ecf02367_09694667 (Smarty_Internal_Template $_smarty_tpl)
     <div class="categories">
         <div class="categories__header">
             <div class="categories__title">Категории</div>
-            <div class="categories__show-all">Смотреть все</div>
+            <div class="categories__show-all ">Смотреть все</div>
         </div>
 
         <div class="categories__main">

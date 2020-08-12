@@ -3,6 +3,7 @@
 namespace application\core;
 
 use application\core\SmartyTemplate;
+use application\models\BasketModel;
 
 /*
 
@@ -63,7 +64,9 @@ abstract class Controller {
      * Стандартная инициализация корзины в шаблонизатор
      */
     protected function initBasket() {
-        $basket = isset($_SESSION['basket']) ? $_SESSION['basket'] : [];
+        $basket_model = new BasketModel();
+        $basket_model->initUser($this->user);
+        $basket = $basket_model->getProductsId();
         $this->view->assignByRef("basket", $basket);
     }
 

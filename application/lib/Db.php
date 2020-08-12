@@ -33,8 +33,16 @@ class Db {
         if(!\R::testConnection()) die('No DB connection!');
     }
 
+    public function dispense($table) {
+        return \R::dispense($table);
+    }
+
     public function store($bean) {
-        \R::store($bean);
+        return \R::store($bean);
+    }
+
+    public function beansToArray($beans){
+        return \R::beansToArray($beans);
     }
 
     /**
