@@ -63,7 +63,7 @@
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-4">
                 <div class="header__order">
                     <i class="header__icon fa fa-shopping-cart" aria-hidden="true">
-                        {if $basket|count != 0}<span class="header__order-count">{$basket|count}</span>{/if}
+                        <span class="header__order-count basket-counter {if $basket|count == 0}d-none{/if}">{$basket|count}</span>
                     </i>
                     <a href="{$url}/basket/index" class="header-link">Корзина</a>
                     
@@ -179,8 +179,8 @@
                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>
             <a href="{if $controller == "basket"}#{else}{$url}/basket/index{/if}" class="bottom-nav__item">
-                <i class="fa fa-shopping-cart {if $controller == "basket"} bottom-nav__item--accent {/if}" aria-hidden="true">
-                    
+                <i class="fa fa-shopping-cart bottom-nav__basket {if $controller == "basket"} bottom-nav__item--accent {/if}" aria-hidden="true">
+                    <span class="basket-counter {if $basket|count == 0}d-none{/if}">{$basket|count}</span>
                 </i>
             </a>
             <a href="{if $controller == "profile"}#{else}{$url}/profile/menu{/if}" 

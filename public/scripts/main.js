@@ -37,6 +37,7 @@ $('.product__buy-btn').click(function(event) {
         console.log(result);
         result = JSON.parse(result);
         if (result.status) {
+            updateBasketCount(1);
             btn.remove();
         }
     });
@@ -54,6 +55,8 @@ $('.product__close-btn').click(function(event) {
         if (result.status) {
             btn.parent().parent().parent().remove();
             if ($(".products").children().length == 0) location = location;
+            updateBasketCount(-1);
+
             delete basket[product_key];
             updateBasketPrice(basket);
         } else {
@@ -74,6 +77,16 @@ function updateBasketPrice(basket) {
     }
 
     $("#basket-buy").html(toNormalPrice(price) + "р");
+}
+
+function updateBasketCount(diff) {
+    basket_counter = $(".basket-counter");
+    count = parseInt(basket_counter.html()) + diff;
+
+    if (count == 0) basket_counter.addClass("d-none");
+    else basket_counter.removeClass("d-none");
+
+    basket_counter.html(count);
 }
 
 function sendPost(url, data, callback) {

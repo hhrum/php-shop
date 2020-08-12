@@ -219,7 +219,7 @@ a.header__logo:focus {
     position: relative;
 }
 
-.header__order-count {
+.basket-counter {
     width: 20px;
     height: 20px;
     background-color: var(--accent-color-dark);
@@ -744,6 +744,14 @@ footer {
 
 .bottom-nav__item--accent {
     color: var(--accent-color);
+}
+
+.bottom-nav__basket {
+    min-width: 30px;
+
+    text-align: center;
+
+    position: relative;
 }
 
 /* --------- Modals --------- */
