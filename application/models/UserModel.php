@@ -57,7 +57,7 @@ class UserModel extends Model {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_hash'] = $hash;
 
-        return true;
+        return $user;
     }
 
     public function signoutUser() {

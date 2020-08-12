@@ -27,15 +27,18 @@
                         <div class="col-12 col-sm-2 product__image">
                             <i class="fa fa-file-image-o fa-3x" aria-hidden="true"></i>
                         </div>
-                        <div class="col-8 col-sm-7 justify-content-start">
+                        <div class="col-7 col-sm-7 justify-content-start">
                             <div class="product__info">
                                 <div class="product__name">{$product.name}</div>
                                 <div class="product__rating">4.6</div>
                                 <div class="product__reviews">1 обзор</div>
                             </div>
                         </div>
-                        <div class="col-4 col-sm-3 product__buy-section">
-                            <a href="#" class="product__buy-btn">
+                        {if $product.id|in_array:$basket}
+                        
+                        {else}
+                        <div class="col-5 col-sm-3 product__buy-section">
+                            <a href="{$url}/basket/add/?product_id={$product.id}" class="product__buy-btn">
                                 <p class="product__price">
                                     {$product.price}
                                 </p>
@@ -44,6 +47,7 @@
                                 </p>
                             </a>
                         </div>
+                        {/if}
                     </div>
                 </div>
                 {/foreach}

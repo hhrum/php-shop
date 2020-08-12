@@ -28,6 +28,22 @@ class  ProductModel extends Model {
     }
 
     /**
+     * Метод возвращает массив продуктов из массива идентификаторов
+     * 
+     * @param array $ids Массив уникальных идентификаторов 
+     */
+    public function getProductsByListId($ids)
+    {
+        $products = [];
+
+        foreach ($ids as $key=>$id) {
+            $products[$key] = $this->getProductById($id);
+        }
+
+        return $products;
+    }
+
+    /**
      * Функция возвращает все продукты категории
      * 
      * @var OODBBean $category - бин категории
@@ -36,6 +52,14 @@ class  ProductModel extends Model {
         $products = $category->ownProductList;
 
         return $products;
+    }
+
+    public function getProductById($id) {
+        return $this->getProduct($id, "id");
+    }
+
+    public function getProduct($value, $key) {
+        return $this->db->findOne($this->base_name, $value, $key);
     }
 
 }

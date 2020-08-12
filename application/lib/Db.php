@@ -33,7 +33,21 @@ class Db {
         if(!\R::testConnection()) die('No DB connection!');
     }
 
-    // Выборка из таблицы
+    public function dispense($table) {
+        return \R::dispense($table);
+    }
+
+    public function store($bean) {
+        return \R::store($bean);
+    }
+
+    public function beansToArray($beans){
+        return \R::beansToArray($beans);
+    }
+
+    /**
+     * Выборка из таблицы
+     */
     public function select($table, $reverse = 0) {
         if ($reverse)
             return \R::findAll($table, 'ORDER BY id DESC');
@@ -41,7 +55,9 @@ class Db {
             return \R::findAll($table);
     }
 
-    // Выборка из таблицы по определенному фильтру
+    /**
+     * Выборка из таблицы по определенному фильтру
+     */
     public function selectSort($table, $filter, $limit = 0) {
         if ($limit == 0)
             return \R::findAll($table, "ORDER BY $filter DESC");
@@ -49,12 +65,16 @@ class Db {
             return \R::findAll($table, "ORDER BY $filter DESC LIMIT ?", [$limit]);
     }
     
-    // Поиск конкретной строки
+    /**
+     * Поиск конкретной строки
+     */
     public function findOne($table, $value, $key = "id") {
         return \R::findOne($table, "$key = ?", [$value]);
     }
 
-    // Вставка строки в таблицу
+    /**
+     * Вставка строки в таблицу
+     */
     public function insert($table, $rows) {
         $row = \R::dispense($table);
 

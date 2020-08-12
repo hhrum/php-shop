@@ -30,6 +30,7 @@ class SmartyTemplate extends \Smarty {
 
         if (file_exists($layout_path) && file_exists($tpl_path)) {
             $this->assign("title", $title);
+            $this->assign("controller", $this->route['controller']);
             $this->assign("tpl_name", $tpl_file);
 
             $this->display($layout_file);

@@ -24,7 +24,7 @@
     <div class="categories">
         <div class="categories__header">
             <div class="categories__title">Категории</div>
-            <div class="categories__show-all">Смотреть все</div>
+            <div class="categories__show-all ">Смотреть все</div>
         </div>
 
         <div class="categories__main">

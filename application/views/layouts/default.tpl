@@ -24,8 +24,11 @@
                     <a href="#" class="dropdown-toggle header-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Категории
                     </a>
+
                     {if $categories}
+                        
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
                         {foreach from=$categories item=category name=categories}
 
                         <a class="dropdown-item header-link" href="{$url}/main/category/?category_id={$category.id}">
@@ -33,10 +36,15 @@
                         </a>
 
                         {/foreach}
+
                     </div>
+
                     {/if}
+
                 </div>
+
                 {if $categories}
+
                 <div class="d-block d-md-none header__categories dropdown">
                     <i class="header__icon fa fa-bars" aria-hidden="true"></i>
                     <a class="header-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -55,9 +63,10 @@
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-4">
                 <div class="header__order">
                     <i class="header__icon fa fa-shopping-cart" aria-hidden="true">
-                        <span class="header__order-count">2</span>
+                        {if $basket|count != 0}<span class="header__order-count">{$basket|count}</span>{/if}
                     </i>
-                    <a href="#" class="header-link">Корзина</a>
+                    <a href="{$url}/basket/index" class="header-link">Корзина</a>
+                    
                 </div>
             </div>
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-5">
@@ -76,7 +85,7 @@
                             </div>
                             <div class="account-menu__footer">
                                 <a href="#" class="account-menu__item header-link">Настройки профиля</a>
-                                <a href="#" class="account-menu__item header-link">Выход</a>
+                                <a href="{$url}/profile/signout" class="account-menu__item header-link">Выход</a>
                             </div>
                         </div>
                     </div>
@@ -169,8 +178,8 @@
                 class="bottom-nav__item {if $controller == "main"} bottom-nav__item--accent {/if}">
                 <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>
-            <a href="#" class="bottom-nav__item">
-                <i class="fa fa-shopping-cart" aria-hidden="true">
+            <a href="{if $controller == "basket"}#{else}{$url}/basket/index{/if}" class="bottom-nav__item">
+                <i class="fa fa-shopping-cart {if $controller == "basket"} bottom-nav__item--accent {/if}" aria-hidden="true">
                     
                 </i>
             </a>
