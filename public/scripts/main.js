@@ -53,7 +53,7 @@ $('.product__close-btn').click(function(event) {
         console.log(result);
         result = JSON.parse(result);
         if (result.status) {
-            btn.parent().parent().parent().remove();
+            btn.parent().parent().parent().parent().parent().remove();
             if ($(".products").children().length == 0) location = location;
             updateBasketCount(-1);
 
@@ -65,7 +65,13 @@ $('.product__close-btn').click(function(event) {
     });
 })
 
-if (basket) {
+$(".product__price").each((index, element) => {
+    element = $(element);
+    price = element.html();
+    element.html(toNormalPrice(price) + "р");
+});
+
+if (typeof basket != 'undefined') {
     updateBasketPrice(basket);
 }
 
