@@ -4,12 +4,16 @@ namespace application\models;
 
 use application\core\Model;
 use application\models\ProductModel;
+use application\models\OrderModel;
 
 class BasketModel extends Model {
 
     protected $user = null;
+    protected $order_model;
+    protected $basket;
+
     protected $product_model;
-    protected $base_name = "basket";
+    protected $base_name = "order_product";
 
     public function __construct() {
         parent::__construct();
@@ -18,6 +22,8 @@ class BasketModel extends Model {
 
     public function initUser($user) {
         $this->user = $user;
+        $this->order_model = new OrderModel($this->user);
+        $this->basket = $this->order_model->getBasket();
     }
 
     /** 
@@ -52,13 +58,14 @@ class BasketModel extends Model {
         if (!$this->product_model->getProductById($product_id)) return ['status' => false, 'message' => $response_errors['product_not_found']];
         if(in_array($product_id, $this->getProductsId())) return ['status' => true];
 
-        if ($this->user) {
-            $basket_item = $this->db->dispense($this->base_name);
-            $basket_item->product_id = $product_id;
-            $basket_item->count = $count;
+        if ($this->user) {     
+            $order_product = $this->db->dispense($this->base_name);
 
-            $this->user->ownBasketList[] = $basket_item;
-            $this->db->store($this->user);
+            $order_product->product_id = $product_id;
+            $order_product->count = $count;
+
+            $this->basket->ownOrderProductList[] = $order_product;
+            $this->db->store($this->basket);
         } else {        
             $basket_item = [
                 'product_id' => $product_id,
@@ -76,8 +83,7 @@ class BasketModel extends Model {
     public function removeProduct($product_key) {
 
         if ($this->user) {
-            unset($this->user->xownBasketList[$product_key]);
-            $this->db->store($this->user);
+            
         } else {
             unset($_SESSION['basket'][$product_key]);
         }
@@ -86,7 +92,7 @@ class BasketModel extends Model {
     }
     
     /** 
-     * Метод возвращающий массив покупок
+     * Метод возвращающий массив бинов покупок
      */
     public function getProducts() {
         $products = $this->getProductsId();
@@ -108,8 +114,7 @@ class BasketModel extends Model {
     public function getBasketItems() {
 
         if ($this->user) {
-            $products = $this->user->ownBasketList;
-            return $products;
+            return $this->basket->ownOrderProductList;
         } else {
             return isset($_SESSION['basket']) ? $_SESSION['basket'] : [];
         }   

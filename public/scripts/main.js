@@ -28,6 +28,20 @@ $('#signup-btn').click(function(event) {
     })
 })
 
+$('#buy-btn').click(function(event) {
+    event.preventDefault();
+    var data = [];
+    console.log(url + "/order/place");
+
+    sendPost(url + "/order/place", data, function(result){
+        if (result.status) {
+            location = url;
+        } else {
+            console.log(result);
+        }
+    })
+})
+
 $('.product__buy-btn').click(function(event) {
     event.preventDefault();
     btn = $(this);
@@ -37,6 +51,7 @@ $('.product__buy-btn').click(function(event) {
         console.log(result);
         result = JSON.parse(result);
         if (result.status) {
+            updateBasketCount(1);
             btn.remove();
         }
     });
@@ -52,8 +67,10 @@ $('.product__close-btn').click(function(event) {
         console.log(result);
         result = JSON.parse(result);
         if (result.status) {
-            btn.parent().parent().parent().remove();
+            btn.parent().parent().parent().parent().parent().remove();
             if ($(".products").children().length == 0) location = location;
+            updateBasketCount(-1);
+
             delete basket[product_key];
             updateBasketPrice(basket);
         } else {
@@ -62,7 +79,13 @@ $('.product__close-btn').click(function(event) {
     });
 })
 
-if (basket) {
+$(".product__price").each((index, element) => {
+    element = $(element);
+    price = element.html();
+    element.html(toNormalPrice(price) + "р");
+});
+
+if (typeof basket != 'undefined') {
     updateBasketPrice(basket);
 }
 
@@ -73,7 +96,17 @@ function updateBasketPrice(basket) {
         price += parseInt(basket[key].price);
     }
 
-    $("#basket-buy").html(toNormalPrice(price) + "р");
+    $("#basket-buy").html("Купить за " + toNormalPrice(price) + "р");
+}
+
+function updateBasketCount(diff) {
+    basket_counter = $(".basket-counter");
+    count = parseInt(basket_counter.html()) + diff;
+
+    if (count == 0) basket_counter.addClass("d-none");
+    else basket_counter.removeClass("d-none");
+
+    basket_counter.html(count);
 }
 
 function sendPost(url, data, callback) {

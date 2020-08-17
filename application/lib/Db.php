@@ -29,12 +29,15 @@ class Db {
     protected function __construct() {
         $db_data = require "application/config/db.php";
         \R::setup("mysql:host={$db_data['host']};dbname={$db_data['dbname']}", $db_data['user'], $db_data['password']);
+        \R::ext('xdispense', function($table_name){
+            return \R::getRedBean()->dispense($table_name);
+        });
         
         if(!\R::testConnection()) die('No DB connection!');
     }
 
     public function dispense($table) {
-        return \R::dispense($table);
+        return \R::xdispense($table);
     }
 
     public function store($bean) {

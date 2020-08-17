@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-11 05:19:03
+/* Smarty version 3.1.34-dev-7, created on 2020-08-12 16:33:45
   from 'C:\IT\xampp\htdocs\php-shop\application\views\layouts\default.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f320e27ec04f7_39290460',
+  'unifunc' => 'content_5f33fdc9dcdcd1_00224564',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50aaba4054f6a88271031a85d0dae0eac40a91ef' => 
     array (
       0 => 'C:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\layouts\\default.tpl',
-      1 => 1597115942,
+      1 => 1597242816,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f320e27ec04f7_39290460 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f33fdc9dcdcd1_00224564 (Smarty_Internal_Template $_smarty_tpl) {
 ?></html><!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -102,8 +102,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <div class="d-none d-md-flex col-2 col-m-3 col-md-2 order-4">
                 <div class="header__order">
                     <i class="header__icon fa fa-shopping-cart" aria-hidden="true">
-                        <?php if (count($_smarty_tpl->tpl_vars['basket']->value) != 0) {?><span class="header__order-count"><?php echo count($_smarty_tpl->tpl_vars['basket']->value);?>
-</span><?php }?>
+                        <span class="header__order-count basket-counter <?php if (count($_smarty_tpl->tpl_vars['basket']->value) == 0) {?>d-none<?php }?>"><?php echo count($_smarty_tpl->tpl_vars['basket']->value);?>
+</span>
                     </i>
                     <a href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
 /basket/index" class="header-link">Корзина</a>
@@ -240,8 +240,9 @@ echo $_smarty_tpl->tpl_vars['url']->value;
             <a href="<?php if ($_smarty_tpl->tpl_vars['controller']->value == "basket") {?>#<?php } else {
 echo $_smarty_tpl->tpl_vars['url']->value;?>
 /basket/index<?php }?>" class="bottom-nav__item">
-                <i class="fa fa-shopping-cart <?php if ($_smarty_tpl->tpl_vars['controller']->value == "basket") {?> bottom-nav__item--accent <?php }?>" aria-hidden="true">
-                    
+                <i class="fa fa-shopping-cart bottom-nav__basket <?php if ($_smarty_tpl->tpl_vars['controller']->value == "basket") {?> bottom-nav__item--accent <?php }?>" aria-hidden="true">
+                    <span class="basket-counter <?php if (count($_smarty_tpl->tpl_vars['basket']->value) == 0) {?>d-none<?php }?>"><?php echo count($_smarty_tpl->tpl_vars['basket']->value);?>
+</span>
                 </i>
             </a>
             <a href="<?php if ($_smarty_tpl->tpl_vars['controller']->value == "profile") {?>#<?php } else {

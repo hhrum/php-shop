@@ -50,6 +50,8 @@ a:focus {
     border-radius: var(--border-radius);
 
     color: #fff;
+
+    box-shadow: var(--element-shadow);
 }
 
 .standart-btn:hover,
@@ -219,7 +221,7 @@ a.header__logo:focus {
     position: relative;
 }
 
-.header__order-count {
+.basket-counter {
     width: 20px;
     height: 20px;
     background-color: var(--accent-color-dark);
@@ -538,14 +540,24 @@ main {
     margin-bottom: 10px;
 }
 
-.product > .row > * {
+.product__image  {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.product__other {
+    display: flex;
+    align-items: center;
+}
+
+.product__other > div {
+    width: 100%;
+}
+
 .product__info {
     overflow: hidden;
+    margin-bottom: 12px;
 }
 
 .product__image i {
@@ -577,7 +589,12 @@ main {
 }
 
 .product__buy-section {
-    flex-direction: column;
+    font-weight: bolder;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-direction: column; */
 }
 
 .product__buy-btn {
@@ -631,8 +648,8 @@ main {
     color: var(--angry-color-dark);
 }
 
-/* Order Page */
-.order-empty {
+/* Basket Page */
+.basket-empty {
     min-height: 100%;
 
     display: flex;
@@ -642,20 +659,34 @@ main {
     flex-grow: 1;
 }
 
-.order-empty > * {
+.basket-empty > * {
     max-width: 600px;
     margin: 20px;
 
     text-align: center;
 }
 
-.order__buy-btn {
+.basket__info {
+    max-width: 350px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 20px;
+
+    font-weight: bolder;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.basket__buy-btn {
     width: 100%;
     margin-top: 16px;
 
     display: flex;
     justify-content: center;
 }
+
+
 
 /* Profile Page */
 .profile {
@@ -744,6 +775,14 @@ footer {
 
 .bottom-nav__item--accent {
     color: var(--accent-color);
+}
+
+.bottom-nav__basket {
+    min-width: 30px;
+
+    text-align: center;
+
+    position: relative;
 }
 
 /* --------- Modals --------- */
@@ -860,6 +899,16 @@ a.login-modal__signup:hover {
     .header__logo {
         justify-content: start;
     }
+
+    /* Basket Page */
+    .basket__info {
+        margin-top: 0;
+        padding: 20px;
+        border-radius: var(--border-radius);
+
+        box-shadow: var(--element-shadow);
+    }
+
 }
 
 /* Размер экрана больше 992 */
