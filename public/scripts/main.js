@@ -28,6 +28,20 @@ $('#signup-btn').click(function(event) {
     })
 })
 
+$('#buy-btn').click(function(event) {
+    event.preventDefault();
+    var data = [];
+    console.log(url + "/order/place");
+
+    sendPost(url + "/order/place", data, function(result){
+        if (result.status) {
+            location = url;
+        } else {
+            console.log(result);
+        }
+    })
+})
+
 $('.product__buy-btn').click(function(event) {
     event.preventDefault();
     btn = $(this);
@@ -82,7 +96,7 @@ function updateBasketPrice(basket) {
         price += parseInt(basket[key].price);
     }
 
-    $("#basket-buy").html(toNormalPrice(price) + "р");
+    $("#basket-buy").html("Купить за " + toNormalPrice(price) + "р");
 }
 
 function updateBasketCount(diff) {

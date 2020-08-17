@@ -2,6 +2,7 @@
 
 namespace application\core;
 
+use application\lib\Responser;
 use application\core\SmartyTemplate;
 use application\models\BasketModel;
 
@@ -11,7 +12,7 @@ use application\models\BasketModel;
 
 */
 
-abstract class Controller {
+abstract class Controller extends Responser {
 
     public $route;
     public $view;
@@ -21,7 +22,6 @@ abstract class Controller {
 
         $this->route = $route;
         $this->view = new SmartyTemplate($route);
-        $this->model = $this->loadModel($route['controller']);
         $this->initUser();
 
     }

@@ -24,6 +24,38 @@
                 {foreach from=$products item=product}
                 <div class="product standart-block">
                     <div class="row">
+                        <div class="col-4 col-md-3 product__image">
+                            <i class="fa fa-file-image-o fa-3x" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-8 col-md-9 product__other">
+                            <div class="row">
+                                <div class="col-12 col-md-8 justify-content-start">
+                                    <div class="product__info">
+                                        <div class="product__name">{$product.name}</div>
+                                        <div class="product__rating">4.6</div>
+                                        <div class="product__reviews">1 обзор</div>
+                                    </div>
+                                </div>
+                                {if $product.id|in_array:$basket}
+                                
+                                {else}
+                                <div class="col-12 col-md-4 product__buy-section">
+                                    <a href="{$url}/basket/add/?product_id={$product.id}" class="product__buy-btn">
+                                        <p class="product__price">
+                                            {$product.price}
+                                        </p>
+                                        <p class="product__buy-text">
+                                            Купить
+                                        </p>
+                                    </a>
+                                </div>
+                                {/if}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {* <div class="product standart-block">
+                    <div class="row">
                         <div class="col-12 col-sm-2 product__image">
                             <i class="fa fa-file-image-o fa-3x" aria-hidden="true"></i>
                         </div>
@@ -49,7 +81,7 @@
                         </div>
                         {/if}
                     </div>
-                </div>
+                </div> *}
                 {/foreach}
             </div>
             {else}
