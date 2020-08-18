@@ -3,6 +3,7 @@
 namespace application\models;
 
 use application\core\Model;
+use application\models\ProductModel;
 
 class OrderModel extends Model {
 
@@ -14,6 +15,9 @@ class OrderModel extends Model {
         $this->user = $user;
     }
 
+    /**
+     * Метод покупки заказов из корзины
+     */
     public function placeOrder() {
         $basket = $this->getBasket();
 
@@ -30,8 +34,24 @@ class OrderModel extends Model {
         return $basket;
     }
 
+    /**
+     * Возвращает все заказы(без корзины)
+     */
     public function getAllOrders() {
-        $orders = $this->user->ownOrderList;
+        $orders = $this->user->with("ORDER by id")->withCondition("state != ? ORDER by id DESC", ['basket'])->ownOrderList;
+        $product_model = new ProductModel();
+
+        foreach ($orders as $key => $value) {
+
+            $products_ids = [];
+
+            foreach ($value->ownOrderProductList as $key => $value) {
+                $products_ids[$key] = $value['product_id'];
+            }
+
+            $orders[$key]['products'] = $product_model->getProductsByListId($products_ids);
+        }
+
         return $orders ? $orders : [];
     }
 

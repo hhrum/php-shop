@@ -22,6 +22,7 @@ class BasketModel extends Model {
 
     public function initUser($user) {
         $this->user = $user;
+        if (!$user) return;
         $this->order_model = new OrderModel($this->user);
         $this->basket = $this->order_model->getBasket();
     }

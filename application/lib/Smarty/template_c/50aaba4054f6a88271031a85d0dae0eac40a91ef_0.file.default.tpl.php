@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-12 16:33:45
+/* Smarty version 3.1.34-dev-7, created on 2020-08-18 10:45:43
   from 'C:\IT\xampp\htdocs\php-shop\application\views\layouts\default.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f33fdc9dcdcd1_00224564',
+  'unifunc' => 'content_5f3b953707b985_90617638',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50aaba4054f6a88271031a85d0dae0eac40a91ef' => 
     array (
       0 => 'C:\\IT\\xampp\\htdocs\\php-shop\\application\\views\\layouts\\default.tpl',
-      1 => 1597242816,
+      1 => 1597740342,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f33fdc9dcdcd1_00224564 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f3b953707b985_90617638 (Smarty_Internal_Template $_smarty_tpl) {
 ?></html><!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -122,7 +122,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                             </div>
                             <div class="account-menu__body">
-                                <a href="#" class="account-menu__item header-link">Заказы</a>
+                                <a href="<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
+/order/index" class="account-menu__item header-link">Заказы</a>
                                 <a href="#" class="account-menu__item header-link">Контакты</a>
                                 <a href="#" class="account-menu__item header-link">Помощь</a>
                             </div>

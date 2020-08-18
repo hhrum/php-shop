@@ -21,6 +21,17 @@ class OrderController extends Controller {
         
     }
 
+    public function indexAction() {
+        global $main_config;
+        if (!$this->user) $this->redirectResponse($main_config['url']);
+
+        $orders = $this->order_model->getAllOrders();
+
+        $this->initCategories();
+        $this->view->assign("orders", $orders);
+        $this->view->render("Ваши заказы");
+    }
+
     public function placeAction() {
 
         $basket = $this->basket_model->getBasketItems();

@@ -14,7 +14,7 @@
             
         </div>
         <div class="profile__body">
-            <a href="#" class="profile__item">Заказы</a>
+            <a href="{$url}/order/index" class="profile__item">Заказы</a>
             <a href="#" class="profile__item">Обратная связь</a>
             <a href="#" class="profile__item">Помощь</a>
         </div>

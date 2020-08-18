@@ -734,6 +734,44 @@ main {
     color: var(--text-color);
 }
 
+/* Order Page */
+.user-order > div * {
+    margin: 0;
+}
+
+.user-order__images {
+    width: 76px;
+    height: 76px;
+    margin: 0;
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.user-order__images img {
+    width: 60px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: 0.3s;
+}
+
+.user-order__images img:hover {
+    transform: translateX(-4px) translateY(-4px);
+}
+
+.user-order__images img:nth-child(2) {
+    top: 8px;
+    left: 8px;
+}
+
+.user-order__images img:nth-child(3) {
+    top: 16px;
+    left: 16px;
+}
+
 /* Footer */
 footer {
     background-color: var(--text-color);

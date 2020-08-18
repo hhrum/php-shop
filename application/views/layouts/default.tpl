@@ -79,7 +79,7 @@
                                 {$user.email}
                             </div>
                             <div class="account-menu__body">
-                                <a href="#" class="account-menu__item header-link">Заказы</a>
+                                <a href="{$url}/order/index" class="account-menu__item header-link">Заказы</a>
                                 <a href="#" class="account-menu__item header-link">Контакты</a>
                                 <a href="#" class="account-menu__item header-link">Помощь</a>
                             </div>
